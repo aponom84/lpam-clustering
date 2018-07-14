@@ -33,7 +33,7 @@ public class CommuteDistance implements DistanceMatrixCalculator {
                 V = V + a[i][j];
             }
             D.set(i, i, degree);
-            System.out.println(degree);
+            //System.out.println(degree);
         }
 
         Matrix A = new Matrix(a);
@@ -44,10 +44,10 @@ public class CommuteDistance implements DistanceMatrixCalculator {
         Matrix d = new Matrix(n, n);
 
         for (int i = 0; i < n; i++) {
-
+//            if (i % 100 == 0) System.out.println(i + "/" + n);
             Matrix ei = new Matrix(1,n);
             ei.set(0, i, 1);
-            for (int j = 0; j < n; j++  ) {
+            for (int j = i; j < n; j++  ) {
                 Matrix ej = new Matrix(1,n);
                 ej.set(0, j, 1);
 
@@ -62,6 +62,7 @@ public class CommuteDistance implements DistanceMatrixCalculator {
                 left = left.times(right);
 
                 d.set(i, j, Math.sqrt(left.get(0, 0)));
+                d.set(j, i, Math.sqrt(left.get(0, 0)));
                 edgeDistanceMap.get(graph.getEdge(i+1)).put(graph.getEdge(j+1),    Math.sqrt(left.get(0, 0))  );
                 edgeDistanceMap.get(graph.getEdge(j+1)).put(graph.getEdge(i+1),    Math.sqrt(left.get(0, 0))  );
             }

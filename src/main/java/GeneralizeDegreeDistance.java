@@ -92,7 +92,7 @@ public class GeneralizeDegreeDistance implements DistanceMatrixCalculator {
 //                      }
 
                     if (distance == 0.0) {
-                        System.out.println("Kaka Puka!!!");
+                        System.out.println("Error!!!");
                         System.exit(2);
                     }
                     D.set(i, j, distance); D.set(j, i, distance);

@@ -12,9 +12,9 @@ import java.util.*;
 import java.util.List;
 
 
-public class PBPolynomial {
+public class PBPolynomial  implements EdgeClustering {
 
-    public static final boolean DEBUG_MODE = true;
+    public static final boolean DEBUG_MODE = false;
 
     public HashMap<Integer, Set<Integer>> formatClustersFile(String fileName)
     {
@@ -113,178 +113,188 @@ public class PBPolynomial {
         return res;
     }
 
-    public HashMap<Integer, Vector<Integer>> PMedianClustering(int p, Matrix distances, String suffix) {
+    public HashMap<Integer, Vector<Integer>> clusterEdges(int p, Matrix distances, String suffix) {
         try {
-            if (DEBUG_MODE) distances.print(1, 1);
-            Polynomial objFunc = new Polynomial();
             int n = distances.getColumnDimension();
-            int rows = distances.getRowDimension();
-            System.out.println("Matrix dimensions rows: " + rows + " columns: " + n);
-            for (int i = 0; i < n; ++i) {
-                Matrix column = distances.getMatrix(0, rows - 1, i, i);
+            {
+                if (DEBUG_MODE) distances.print(1, 1);
+                Polynomial objFunc = new Polynomial();
+                int rows = distances.getRowDimension();
+                System.out.println("Matrix dimensions rows: " + rows + " columns: " + n);
+                for (int i = 0; i < n; ++i) {
+                    Matrix column = distances.getMatrix(0, rows - 1, i, i);
 
-                double[] costsArray = column.getColumnPackedCopy();
+                    double[] costsArray = column.getColumnPackedCopy();
 
-                if(DEBUG_MODE) System.out.println("Original: " + Arrays.toString(costsArray));
+                    if (DEBUG_MODE) System.out.println("Original: " + Arrays.toString(costsArray));
 
-                this.preprocessCosts(costsArray, rows, p);
+                    this.preprocessCosts(costsArray, rows, p);
 
-                if(DEBUG_MODE) System.out.println("Preprocessed: " + Arrays.toString(costsArray));
+                    if (DEBUG_MODE) System.out.println("Preprocessed: " + Arrays.toString(costsArray));
 
-                // Sorting
-                double[] sorted = Arrays.copyOf(costsArray, costsArray.length);
-                Arrays.sort(sorted);
+                    // Sorting
+                    double[] sorted = Arrays.copyOf(costsArray, costsArray.length);
+                    Arrays.sort(sorted);
 
-                if(DEBUG_MODE) System.out.println("Sorted: " + Arrays.toString(sorted));
+                    if (DEBUG_MODE) System.out.println("Sorted: " + Arrays.toString(sorted));
 
-                //Indices in sorted array
-                Integer[] indicesArr = this.getIndicesInSortedArr(costsArray);
-                if(DEBUG_MODE) System.out.println("Indices: " + Arrays.toString(indicesArr)); // TODO do not forget +1 for y1 y2 and so on
+                    //Indices in sorted array
+                    Integer[] indicesArr = this.getIndicesInSortedArr(costsArray);
+                    if (DEBUG_MODE)
+                        System.out.println("Indices: " + Arrays.toString(indicesArr)); // TODO do not forget +1 for y1 y2 and so on
 
-                double[] diff = Arrays.copyOf(sorted, sorted.length);
+                    double[] diff = Arrays.copyOf(sorted, sorted.length);
 
-                for (int j = 1; j < diff.length; j++) {
-                    diff[j] = sorted[j] - sorted[j - 1];
-                }
-                if(DEBUG_MODE) System.out.println("Diff: " + Arrays.toString(diff));
-
-                Integer[] normIndices = Arrays.copyOf(indicesArr, indicesArr.length);
-                for (int j = 0; j < normIndices.length; j++) {
-                    normIndices[j]++;
-                }
-                if(DEBUG_MODE) System.out.println("Norm Indices: " + Arrays.toString(normIndices));
-
-                Polynomial a = this.getPolynomial(diff, normIndices, rows - p);
-                if(DEBUG_MODE) { System.out.print("Polynomial: ");
-                a.print(); }
-
-                if(DEBUG_MODE) System.out.println(new String(new char[80]).replace("\0", "-"));
-                objFunc.plus(a);
-                System.out.println(String.valueOf(i+1) + " / " + String.valueOf(n));
-            }
-
-            if(DEBUG_MODE){ System.out.print("Obj func: ");
-            objFunc.print(); }
-
-            //Replacing monomials with power > 1 with z
-            HashMap<SortedSet<Integer>, Double> coef = objFunc.getCoefficients();
-
-            HashMap<SortedSet<Integer>, Integer> zReplaces = new HashMap<>();
-            int zCounter = 1;
-            for (SortedSet<Integer> k : coef.keySet()) {
-                if (k.size() > 1) {
-                    zReplaces.put(k, zCounter++);
-                }
-            }
-            if(DEBUG_MODE) System.out.println("ZReplaces: " + Arrays.asList(zReplaces));
-
-            //end replacing
-            //Creating model file
-
-            PrintWriter writer = new PrintWriter("model_" + suffix + ".lp" , "UTF-8");
-            PrintWriter cplex_writer = new PrintWriter("cplex_model_" + suffix + ".lp" , "UTF-8");
-            writer.print("min: ");
-            cplex_writer.println("minimize");
-            int count = 0;
-            int size = coef.keySet().size();
-            for (SortedSet<Integer> k : coef.keySet()) {
-                count++;
-                if (k.size() == 1) {
-                    Integer var = k.first();
-                    if (var == 0) {
-                        writer.print(String.valueOf(coef.get(k)) + " + ");
-                        cplex_writer.print(String.valueOf(coef.get(k)) + " + ");
+                    for (int j = 1; j < diff.length; j++) {
+                        diff[j] = sorted[j] - sorted[j - 1];
                     }
-                    else {
-                        writer.print(String.valueOf(coef.get(k)) + " y" + String.valueOf(var) + (count == size ? ";" : " + "));
-                        cplex_writer.print(String.valueOf(coef.get(k)) + " y" + String.valueOf(var) + (count == size ? "" : " + "));
+                    if (DEBUG_MODE) System.out.println("Diff: " + Arrays.toString(diff));
+
+                    Integer[] normIndices = Arrays.copyOf(indicesArr, indicesArr.length);
+                    for (int j = 0; j < normIndices.length; j++) {
+                        normIndices[j]++;
                     }
-                } else {
-                    Integer var = zReplaces.get(k);
-                    writer.print(String.valueOf(coef.get(k)) + " z" + String.valueOf(var) + (count == size ? ";" : " + "));
-                    cplex_writer.print(String.valueOf(coef.get(k)) + " z" + String.valueOf(var) + (count == size ? "" : " + "));
-                }
-            }
-            writer.println();
-            cplex_writer.println();
-            cplex_writer.println("subject to");
-            //obj_func end
+                    if (DEBUG_MODE) System.out.println("Norm Indices: " + Arrays.toString(normIndices));
 
-            //start constrain for y
-            writer.print(String.valueOf(rows - p) + " <= ");
-            for (int i = 1; i <= rows; ++i) {
-                writer.print("y" + String.valueOf(i) + (i != rows ? " + " : ""));
-                cplex_writer.print("y" + String.valueOf(i) + (i != rows ? " + " : ""));
-            }
-            writer.print(" <= " + String.valueOf(rows - p) + ";");
-            cplex_writer.print(" = " + String.valueOf(rows - p));
-            writer.println();
-            cplex_writer.println();
-            //end constrain for y
-
-            //start constraints for y and z
-            if (zReplaces.size() != 0) {
-                for (SortedSet <Integer> k : zReplaces.keySet()) {
-                    int y_counter = 0;
-                    int y_size = k.size();
-                    writer.print("0 <=");
-                    for (Integer var : k) {
-                        y_counter++;
-                        writer.print("y" + String.valueOf(var) + (y_counter == y_size ? "" : " + "));
-                        cplex_writer.print("y" + String.valueOf(var) + (y_counter == y_size ? "" : " + "));
+                    Polynomial a = this.getPolynomial(diff, normIndices, rows - p);
+                    if (DEBUG_MODE) {
+                        System.out.print("Polynomial: ");
+                        a.print();
                     }
-                    writer.print(" - " + "z" + String.valueOf(zReplaces.get(k)) + " <= " + String.valueOf(y_counter - 1) + ";\n");
-                    cplex_writer.print(" - " + "z" + String.valueOf(zReplaces.get(k)) + " <= " + String.valueOf(y_counter - 1) + "\n");
-                }
-                //end constraints for y and z
 
-                for (SortedSet<Integer> k : zReplaces.keySet()) {
-                    int y_counter = 0;
-                    int y_size = k.size();
-                    for (Integer var : k) {
-                        y_counter++;
-                        cplex_writer.print("y" + String.valueOf(var) + (y_counter == y_size ? "" : " + "));
+                    if (DEBUG_MODE) System.out.println(new String(new char[80]).replace("\0", "-"));
+                    objFunc.plus(a);
+                    System.out.println(String.valueOf(i + 1) + " / " + String.valueOf(n));
+                }
+
+                if (DEBUG_MODE) {
+                    System.out.print("Obj func: ");
+                    objFunc.print();
+                }
+
+                //Replacing monomials with power > 1 with z
+                HashMap<SortedSet<Integer>, Double> coef = objFunc.getCoefficients();
+
+                HashMap<SortedSet<Integer>, Integer> zReplaces = new HashMap<>();
+                int zCounter = 1;
+                for (SortedSet<Integer> k : coef.keySet()) {
+                    if (k.size() > 1) {
+                        zReplaces.put(k, zCounter++);
                     }
-                    cplex_writer.print(" - " + "z" + String.valueOf(zReplaces.get(k)) + " >= " + String.valueOf(0) + "\n");
                 }
+                if (DEBUG_MODE) System.out.println("ZReplaces: " + Arrays.asList(zReplaces));
 
-                //start for z
-                for (SortedSet<Integer> k : zReplaces.keySet()) {
-                    writer.print("z" + String.valueOf(zReplaces.get(k)) + " >= 0" + ";\n");
-                }
-                //end for z
+                //end replacing
+                //Creating model file
 
-                //start for int
-                count = 0;
-                size = zReplaces.keySet().size();
-                writer.print("int ");
-                cplex_writer.println("Binary");
-                for (SortedSet<Integer> k : zReplaces.keySet()) {
+                PrintWriter writer = new PrintWriter("model_" + suffix + ".lp", "UTF-8");
+                PrintWriter cplex_writer = new PrintWriter("cplex_model_" + suffix + ".lp", "UTF-8");
+                writer.print("min: ");
+                cplex_writer.println("minimize");
+                int count = 0;
+                int size = coef.keySet().size();
+                for (SortedSet<Integer> k : coef.keySet()) {
                     count++;
-                    writer.print("z" + String.valueOf(zReplaces.get(k)) + (count == size ? ";" : ","));
-                    cplex_writer.print("z" + String.valueOf(zReplaces.get(k)) + (count == size ? " " : " "));
+                    if (k.size() == 1) {
+                        Integer var = k.first();
+                        if (var == 0) {
+                            writer.print(String.valueOf(coef.get(k)) + " + ");
+                            cplex_writer.print(String.valueOf(coef.get(k)) + " + ");
+                        } else {
+                            writer.print(String.valueOf(coef.get(k)) + " y" + String.valueOf(var) + (count == size ? ";" : " + "));
+                            cplex_writer.print(String.valueOf(coef.get(k)) + " y" + String.valueOf(var) + (count == size ? "" : " + "));
+                        }
+                    } else {
+                        Integer var = zReplaces.get(k);
+                        writer.print(String.valueOf(coef.get(k)) + " z" + String.valueOf(var) + (count == size ? ";" : " + "));
+                        cplex_writer.print(String.valueOf(coef.get(k)) + " z" + String.valueOf(var) + (count == size ? "" : " + "));
+                    }
                 }
                 writer.println();
-                //end for int
+                cplex_writer.println();
+                cplex_writer.println("subject to");
+                //obj_func end
+
+                //start constrain for y
+                writer.print(String.valueOf(rows - p) + " <= ");
+                for (int i = 1; i <= rows; ++i) {
+                    writer.print("y" + String.valueOf(i) + (i != rows ? " + " : ""));
+                    cplex_writer.print("y" + String.valueOf(i) + (i != rows ? " + " : ""));
+                }
+                writer.print(" <= " + String.valueOf(rows - p) + ";");
+                cplex_writer.print(" = " + String.valueOf(rows - p));
+                writer.println();
+                cplex_writer.println();
+                //end constrain for y
+
+                //start constraints for y and z
+                if (zReplaces.size() != 0) {
+                    for (SortedSet<Integer> k : zReplaces.keySet()) {
+                        int y_counter = 0;
+                        int y_size = k.size();
+                        writer.print("0 <=");
+                        for (Integer var : k) {
+                            y_counter++;
+                            writer.print("y" + String.valueOf(var) + (y_counter == y_size ? "" : " + "));
+                            cplex_writer.print("y" + String.valueOf(var) + (y_counter == y_size ? "" : " + "));
+                        }
+                        writer.print(" - " + "z" + String.valueOf(zReplaces.get(k)) + " <= " + String.valueOf(y_counter - 1) + ";\n");
+                        cplex_writer.print(" - " + "z" + String.valueOf(zReplaces.get(k)) + " <= " + String.valueOf(y_counter - 1) + "\n");
+                    }
+                    //end constraints for y and z
+
+                    for (SortedSet<Integer> k : zReplaces.keySet()) {
+                        int y_counter = 0;
+                        int y_size = k.size();
+                        for (Integer var : k) {
+                            y_counter++;
+                            cplex_writer.print("y" + String.valueOf(var) + (y_counter == y_size ? "" : " + "));
+                        }
+                        cplex_writer.print(" - " + "z" + String.valueOf(zReplaces.get(k)) + " >= " + String.valueOf(0) + "\n");
+                    }
+
+                    //start for z
+                    for (SortedSet<Integer> k : zReplaces.keySet()) {
+                        writer.print("z" + String.valueOf(zReplaces.get(k)) + " >= 0" + ";\n");
+                    }
+                    //end for z
+
+                    //start for int
+                    count = 0;
+                    size = zReplaces.keySet().size();
+                    writer.print("int ");
+                    cplex_writer.println("Binary");
+                    for (SortedSet<Integer> k : zReplaces.keySet()) {
+                        count++;
+                        writer.print("z" + String.valueOf(zReplaces.get(k)) + (count == size ? ";" : ","));
+                        cplex_writer.print("z" + String.valueOf(zReplaces.get(k)) + (count == size ? " " : " "));
+                    }
+                    writer.println();
+                    //end for int
+                }
+
+                //start for binaries
+                writer.print("bin ");
+                for (int i = 1; i <= rows; ++i) {
+                    writer.print("y" + String.valueOf(i) + (i != rows ? "," : ";"));
+                    cplex_writer.print("y" + String.valueOf(i) + (i != rows ? " " : ""));
+                }
+                writer.println();
+                cplex_writer.println();
+                cplex_writer.println("end");
+
+                writer.close();
+                cplex_writer.close();
+
+                coef = null;
+                objFunc = null;
+                zReplaces = null;
             }
 
-            //start for binaries
-            writer.print("bin ");
-            for (int i = 1; i <= rows; ++i) {
-                writer.print("y" + String.valueOf(i) + (i != rows ? "," : ";"));
-                cplex_writer.print("y" + String.valueOf(i) + (i != rows ? " " : ""));
-            }
-            writer.println();
-            cplex_writer.println();
-            cplex_writer.println("end");
+            System.gc();
+
             //end for binaries
-
-            writer.close();
-            cplex_writer.close();
-
-            coef = null;
-            objFunc = null;
-            zReplaces = null;
+            System.out.println("Model ready");
 
             //solve
             LpSolve lp_solver = LpSolve.readLp("model_" + suffix + ".lp", LpSolve.NORMAL, "PMP");
@@ -356,6 +366,11 @@ public class PBPolynomial {
         return null;
     }
 
+    @Override
+    public String getShortName() {
+        return "PMP";
+    }
+
     public static void main(String[] args) {
         PBPolynomial solver = new PBPolynomial();
         int n = 4;
@@ -363,7 +378,7 @@ public class PBPolynomial {
 
         double[][] ar = {{7., 15., 10., 7., 10.}, {10., 17., 4., 11., 22.}, {16., 7., 6., 18., 14.}, {11., 7., 6., 12., 8.}};
         Matrix costs = new Matrix(ar);
-        solver.PMedianClustering(p, costs, "comms");
+        solver.clusterEdges(p, costs, "comms");
         solver.formatClustersFile("comms.dat");
 
     }

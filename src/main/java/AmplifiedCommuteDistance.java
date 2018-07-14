@@ -29,8 +29,8 @@ public class AmplifiedCommuteDistance implements DistanceMatrixCalculator {
         Matrix d = new Matrix(n, n);
 
         for (int i = 0; i < n; i++) {
+//          if (i % 100 == 0) System.out.println(i + "/" + n);
             d.set(i, i, 0);
-
             Matrix ei = new Matrix(1,n);
             ei.set(0, i, 1);
             for (int j = i+1; j < n; j++) {
@@ -39,7 +39,6 @@ public class AmplifiedCommuteDistance implements DistanceMatrixCalculator {
 
                 Matrix left = ei.minus(ej);
 
-                //left = left.times(volG);
                 left =  left.times(L);
 
                 Matrix right = ei.transpose().minus(ej.transpose());
@@ -51,7 +50,6 @@ public class AmplifiedCommuteDistance implements DistanceMatrixCalculator {
                 double d_i = D.get(i, i);
                 double d_j = D.get(j, j);
                 double S_ij = R_ij - 1/d_i - 1/d_j;
-
                 double u_ij = 2*a[i][j] / (d_i*d_j) - a[i][i] / (d_i*d_i) - a[j][j] / (d_j*d_j);
                 double Camp_ij = Math.sqrt(S_ij + u_ij);
 

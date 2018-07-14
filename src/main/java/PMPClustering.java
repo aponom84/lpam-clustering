@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.stream.StreamSupport;
 
+import org.apache.commons.cli.*;
 import org.gephi.graph.api.*;
 import org.gephi.io.exporter.api.ExportController;
 import org.gephi.io.exporter.spi.GraphExporter;
@@ -15,7 +16,6 @@ import org.gephi.io.processor.plugin.DefaultProcessor;
 import org.gephi.project.api.ProjectController;
 import org.gephi.project.api.Workspace;
 import org.openide.util.Lookup;
-import org.apache.commons.cli.*;
 import org.gephi.graph.api.Node;
 
 public class PMPClustering {
@@ -58,12 +58,16 @@ public class PMPClustering {
      * @param lineGraph
      */
 
-    public void doClustering(String fileName, DistanceMatrixCalculator distanceMatrixCalculator,  String communitiesFile, int clustersNumber, boolean benchmark,  boolean lineGraph) {
-        String[] split = fileName.split("/");
-        String suffix = split[split.length - 1];
+    public void doClustering(String fileName, DistanceMatrixCalculator distanceMatrixCalculator, EdgeClustering edgeClustering,  String communitiesFile, int clustersNumber, boolean benchmark,  boolean lineGraph) {
+        File file = new File(fileName);
+        if (!file.exists()) {
+            System.out.println("Error: file does not exist: " + file.toString());
+            return;
+        }
+        String suffix = file.getName();
         suffix = suffix.split("\\.")[0];
         System.out.println("Suffix: " + suffix);
-        suffix = suffix + "_" + distanceMatrixCalculator.getShortName() + "_" + String.valueOf(clustersNumber);
+        suffix = suffix + "_" + distanceMatrixCalculator.getShortName() + "_" + edgeClustering.getShortName() + "_" + String.valueOf(clustersNumber);
 
         //Init a project - and therefore a workspace
         ProjectController pc = Lookup.getDefault().lookup(ProjectController.class);
@@ -78,17 +82,15 @@ public class PMPClustering {
             graph = PMPClustering.readFromBenchmarkFile(fileName, Lookup.getDefault().lookup(GraphController.class).getModel(workspace));
             System.out.println("Edge count: " + graph.getEdgeCount());
 
-            for (Edge edge : graph.getEdges()) {
-                System.out.print(edge.getSource().getNodeData().getLabel() + " ");
-                System.out.println(edge.getTarget().getNodeData().getLabel());
-            }
+            //for (Edge edge : graph.getEdges()) {
+            //    System.out.print(edge.getSource().getNodeData().getLabel() + " ");
+            //    System.out.println(edge.getTarget().getNodeData().getLabel());
+            //}
         }
         else {
             //Import file
             try {
-                File file = new File(fileName);
-
-                container = importController.importFile(file);
+                container = importController.importFile(file.getCanonicalFile());
                 container.getLoader().setEdgeDefault(EdgeDefault.UNDIRECTED);
                 container.setAllowAutoNode(false);  //Don't create missing nodes
             } catch (Exception ex) {
@@ -116,11 +118,13 @@ public class PMPClustering {
 
         }
 
+        System.out.println("start distance map calculation. \n");
+
         Matrix d;
         d = distanceMatrixCalculator.calculateDistanceMatrix(graph);
 
         System.out.println("edgeDistanceMap has been calculated. \n");
-        d.print(7,7);
+        //d.print(7,7);
 
 
         //--------------------------------------------end of matrix calculation----------------------------------------------------
@@ -128,7 +132,8 @@ public class PMPClustering {
         //edge clustering
         PBPolynomial sol = new PBPolynomial();
         // <Cluster, Vector of Edges>
-        HashMap<Integer, Vector<Integer>> cluster_edges = sol.PMedianClustering(clustersNumber, d, suffix);
+
+        HashMap<Integer, Vector<Integer>> cluster_edges = edgeClustering.clusterEdges(clustersNumber, d, suffix);
 
         //results of clustering
         HashMap<Integer/*Node*/, HashMap<Integer, Integer>/*Clusters*/> node_clusters = new HashMap<>();
@@ -342,8 +347,8 @@ public class PMPClustering {
 
         Option distanceTypeOption = new Option("d", "distance", true,
                 "the type of function to measure the distance between nodes.\n" +
-                        "Possible values: sp (shortest path) | gd (Generalize Degree) | cm (Commute Distance).\n" +
-                        "If this option is omitted, the Commute Distance distance function will be used.");
+                        "Possible values: sp (shortest path) | gd (Generalize Degree) | cm (Commute Distance) | acm (Amplified Commute Distance).\n" +
+                        "If this option is omitted, the Generalize Degree distance function will be used.");
         distanceTypeOption.setRequired(false);
         //distanceTypeOption.
         options.addOption(distanceTypeOption);
@@ -361,13 +366,20 @@ public class PMPClustering {
         lineGraph.setRequired(false);
         options.addOption(lineGraph);
 
+        Option edgeClusteringOption = new Option("e", "edgecluster", true,
+                "clustering algorithm to use for edges.\n" +
+                        "Possible values: pmp (p-Median) | kmd (k-Medoids) | kmn (K-Means).\n" +
+                        "If this option is omitted, the P-Median algorithm will be used.");
+        edgeClusteringOption.setRequired(false);
+        options.addOption(edgeClusteringOption);
+
         Option communitiesFileOption = new Option("c", "communitiesFile", true, "use communities file to validate benchmark");
         communitiesFileOption.setRequired(false);
         options.addOption(communitiesFileOption);
 
 
         Option output = new Option("o", "output", true,
-                "the name of the output fule. If option was omitted, the name of the output file\n" +
+                "the name of the output file. If option was omitted, the name of the output file\n" +
                         "will be composed automatically as \"{suffix}_{distanceName}_{clusterNumber}_out.gexf\" ");
         output.setRequired(false);
         options.addOption(output);
@@ -381,7 +393,7 @@ public class PMPClustering {
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
-            formatter.printHelp("PMPClustering <-i input_file> <-k number_of_clusters> [-bcd]", options);
+            formatter.printHelp("PMPClustering <-i input_file> <-k number_of_clusters> [-bcdm]", options);
 
             System.exit(1);
             return;
@@ -412,10 +424,30 @@ public class PMPClustering {
                     break;
                 default: {
                     System.out.println("Wrong argument after distance option.");
-                    System.out.println("Possible values: sp (Shortest Path) | gd (Generalize Degree) | cm (Commute Distance).");
+                    System.out.println("Possible values: sp (Shortest Path) | gd (Generalize Degree) | cm (Commute Distance) | acm (Amplified Commute Distance).");
                     System.exit(1);
                 }
+            }
+        }
 
+        EdgeClustering edgeClustering = new PBPolynomial();
+
+        if (cmd.hasOption("edgecluster")) {
+            switch (cmd.getOptionValue("edgecluster").toLowerCase()) {
+                case "pmp":
+                    edgeClustering = new PBPolynomial();
+                    break;
+                case "kmd":
+                    edgeClustering = new KMedoidsWrapper();
+                    break;
+                case "kmn":
+                    edgeClustering = new KMeansWrapper();
+                    break;
+                default: {
+                    System.out.println("Wrong argument after edge clustering option.");
+                    System.out.println("Possible values: pmp (P-Median) | kmd (K Medoids) | kmn (K-Means).");
+                    System.exit(1);
+                }
             }
         }
 
@@ -423,7 +455,7 @@ public class PMPClustering {
 
 //        clustering.doClustering("karate.gml", "communities.dat", 10, false, true, true);
 //        clustering.doClustering("§", "communities.dat", 2, false, true, true);
-        clustering.doClustering(inputFilePath, distanceMatrixCalculator, communitiesFile, clusterNumber, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
+        clustering.doClustering(inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
     }
 } //class
 
