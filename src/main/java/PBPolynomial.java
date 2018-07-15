@@ -152,7 +152,7 @@ public class PBPolynomial  implements EdgeClustering {
                     //Indices in sorted array
                     Integer[] indicesArr = this.getIndicesInSortedArr(costsArray);
                     if (DEBUG_MODE)
-                        System.out.println("Indices: " + Arrays.toString(indicesArr)); // TODO do not forget +1 for y1 y2 and so on
+                        System.out.println("Indices: " + Arrays.toString(indicesArr));
 
                     double[] diff = Arrays.copyOf(sorted, sorted.length);
 
