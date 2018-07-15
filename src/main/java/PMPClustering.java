@@ -54,11 +54,12 @@ public class PMPClustering {
      * @param distanceMatrixCalculator
      * @param communitiesFile
      * @param clustersNumber
+     * @param threshold
      * @param benchmark
      * @param lineGraph
      */
 
-    public void doClustering(String fileName, DistanceMatrixCalculator distanceMatrixCalculator, EdgeClustering edgeClustering,  String communitiesFile, int clustersNumber, boolean benchmark,  boolean lineGraph) {
+    public void doClustering(String fileName, DistanceMatrixCalculator distanceMatrixCalculator, EdgeClustering edgeClustering,  String communitiesFile, int clustersNumber, double threshold, boolean benchmark,  boolean lineGraph) {
         File file = new File(fileName);
         if (!file.exists()) {
             System.out.println("Error: file does not exist: " + file.toString());
@@ -134,9 +135,9 @@ public class PMPClustering {
         HashMap<Integer, Vector<Integer>> cluster_edges = edgeClustering.clusterEdges(clustersNumber, d, suffix);
 
         //results of clustering
-        HashMap<Integer/*Node*/, HashMap<Integer, Integer>/*Clusters*/> node_clusters = new HashMap<>();
-        HashMap<Integer/*Cluster*/, Set<Integer>/*Nodes*/> format_clusters = new HashMap<>();
-        Vector<Integer> c = new Vector<>(cluster_edges.keySet());
+        HashMap<Integer/*Node*/, HashMap<Integer, Integer>/* cluster id->count */> node_clusters = new HashMap<>();
+
+        Vector<Integer> c = new Vector<>(cluster_edges.keySet()); //?
         c.sort(Integer::compareTo);
         System.out.println("Sorted clusters indices: " + Arrays.asList(c));
         for (Integer cluster: cluster_edges.keySet()) {
@@ -166,30 +167,38 @@ public class PMPClustering {
                     node_clusters.get(sourceId).put(c.indexOf(cluster) + 1, 1);
                 else
                     node_clusters.get(sourceId).put(c.indexOf(cluster) + 1, node_clusters.get(sourceId).get(c.indexOf(cluster) + 1) + 1 );
-
-                format_clusters.computeIfAbsent(c.indexOf(cluster) + 1,  k -> new TreeSet<>());
-                format_clusters.get(c.indexOf(cluster) + 1).add(targetId);
-                format_clusters.get(c.indexOf(cluster) + 1).add(sourceId);
             }
         }
 
         System.out.println("PMP clusters: " + Arrays.asList(node_clusters));
-        System.out.println("Clusters: " + Arrays.asList(format_clusters));
 
-        for (Integer key : node_clusters.keySet()) {
-            if (node_clusters.get(key).size() > 1) {
-                int sum = 0;
-                for (Integer val : node_clusters.get(key).values()) {
+        //claculate the final overlapping structure of communities
+        HashMap<Integer/*Cluster id*/, Set<Integer>/*Nodes*/> format_clusters = new HashMap<>();
+
+        for (Integer nodeId : node_clusters.keySet()) {
+            if (node_clusters.get(nodeId).size() > 0) {
+                double sum = 0;
+
+                for (Integer val : node_clusters.get(nodeId).values()) {
                     sum += val;
                 }
-                System.out.print("Node: " + String.valueOf(key) + " ");
-                for (Integer k : node_clusters.get(key).keySet()) {
+                System.out.print("Node: " + String.valueOf(nodeId) + " ");
+                for (Integer clusterId : node_clusters.get(nodeId).keySet()) {
                     DecimalFormat df = new DecimalFormat("####0.00");
-                    System.out.print(String.valueOf(k) + " " + df.format(node_clusters.get(key).get(k) * 100 / (double) sum) + "% ");
+                    double belonging = node_clusters.get(nodeId).get(clusterId)  / sum;
+                    System.out.print(String.valueOf(clusterId) + " " + df.format(belonging*100) + "% ");
+
+                    if (belonging >= threshold) {
+                        format_clusters.computeIfAbsent(clusterId,  kk -> new TreeSet<>());
+                        format_clusters.get(clusterId).add(nodeId);
+                    }
                 }
                 System.out.println();
             }
         }
+
+        System.out.println("Clusters: " + Arrays.asList(format_clusters));
+
         sol.writeForMetrics(format_clusters, "pmp_" + suffix + ".dat");
         if(benchmark)
         {
@@ -348,9 +357,15 @@ public class PMPClustering {
         distanceTypeOption.setRequired(false);
         options.addOption(distanceTypeOption);
 
-        Option clusterNumberOption = new Option("k",  true, "number of clusters to detect (int)");
+        Option clusterNumberOption = new Option("k",  true, "Number of clusters to detect (int)");
         clusterNumberOption.setRequired(true);
         options.addOption(clusterNumberOption);
+
+        Option thresholdOption = new Option("t", "threshold", true,
+                "Vertex i belongs to cluster C, if node i has fraction of edges in cluster C greater then this value\n" +
+                        "Default value is 0.");
+        thresholdOption.setRequired(false);
+        options.addOption(thresholdOption);
 
         Option lineGraph = new Option("l", "linegraph", false, "produce line graph as output");
         lineGraph.setRequired(false);
@@ -375,6 +390,13 @@ public class PMPClustering {
         communitiesFileOption.setRequired(false);
         options.addOption(communitiesFileOption);
 
+        Option forceOption = new Option("f", "force", false, "" +
+                "The previous founded solution by lp_solver will not be used. lp_solver will be started forced.\n" +
+                "The flag effects only the PMP exact edge clustering algorithm.\n" +
+                "By default algorithm will try to get previous founded solution");
+        forceOption.setRequired(false);
+        options.addOption(forceOption);
+
         Option output = new Option("o", "output", true,
                 "the name of the output file. If option was omitted, the name of the output file\n" +
                         "will be composed automatically as \"{suffix}_{distanceName}_{clusterNumber}_out.gexf\" ");
@@ -389,13 +411,20 @@ public class PMPClustering {
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
-            formatter.printHelp("PMPClustering <-i input_file> <-k number_of_clusters> [-bcdm]", options);
+            formatter.printHelp("PMPClustering <-i input_file> <-k number_of_clusters> [-ftbcd]", options);
             System.exit(1);
             return;
         }
 
         String inputFilePath = cmd.getOptionValue("input");
         int clusterNumber = Integer.valueOf(cmd.getOptionValue("k"));
+
+        double threshold = 0; //default value for threshold
+        if (cmd.hasOption("threshold"))
+            threshold = Double.parseDouble(cmd.getOptionValue("threshold"));
+
+
+
         String communitiesFile = null; //"communities.dat"
         if (cmd.hasOption("benchmark") ) {
             communitiesFile = cmd.getOptionValue("communitiesFile");
@@ -434,7 +463,7 @@ public class PMPClustering {
         if (cmd.hasOption("algorithm")) {
             switch (cmd.getOptionValue("algorithm").toLowerCase()) {
                 case "pmp":
-                    edgeClustering = new PBPolynomial();
+                    edgeClustering = new PBPolynomial(cmd.hasOption("force"));
                     break;
                 case "kmd":
                     edgeClustering = new KMedoidsWrapper();
@@ -454,7 +483,7 @@ public class PMPClustering {
             }
         }
 
-        clustering.doClustering(inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
+        clustering.doClustering(inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, threshold, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
     }
 }
 

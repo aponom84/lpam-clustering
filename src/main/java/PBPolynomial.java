@@ -3,10 +3,7 @@ import lpsolve.*;
 import Jama.Matrix;
 
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.List;
@@ -15,6 +12,20 @@ import java.util.List;
 public class PBPolynomial  implements EdgeClustering {
 
     public static final boolean DEBUG_MODE = false;
+
+    private boolean FORCE_MODE = false; //if true, the previous founded solution by lp_solver will not be used
+
+    /**
+     *
+     * @param force_mode if true, the previous founded solution by lp_solver will not be used
+     */
+    public PBPolynomial(boolean force_mode) {
+        FORCE_MODE = force_mode;
+    }
+
+    public PBPolynomial() {
+         this(false);
+    }
 
     public HashMap<Integer, Set<Integer>> formatClustersFile(String fileName)
     {
@@ -296,30 +307,30 @@ public class PBPolynomial  implements EdgeClustering {
             //end for binaries
             System.out.println("Model ready");
 
-            //solve
-            LpSolve lp_solver = LpSolve.readLp("model_" + suffix + ".lp", LpSolve.NORMAL, "PMP");
-            System.out.println("LPSOLVE READ MODEL");
-            lp_solver.setAddRowmode(false);
-            //lp_solver.setImprove(0);
-            int lp_solve_exit_code = lp_solver.solve();
-            System.out.println("lp_solve_exit_code: " + lp_solve_exit_code);
-            System.out.println("lp_solve_objective_function: " + lp_solver.getObjective());
+            String solverOutputFilename = "solution_" + suffix + ".lp";
 
-            lp_solver.setOutputfile("solution_" + suffix + ".lp");
-            System.out.println("LPSOLVE SOLVED MODEL");
-            lp_solver.printSolution(1);
+            if (!new File(solverOutputFilename).exists() || FORCE_MODE){
+                //solve
+                LpSolve lp_solver = LpSolve.readLp("model_" + suffix + ".lp", LpSolve.NORMAL, "PMP");
+                System.out.println("LPSOLVE READ MODEL");
+                lp_solver.setAddRowmode(false);
+                //lp_solver.setImprove(0);
+                int lp_solve_exit_code = lp_solver.solve();
+                System.out.println("lp_solve_exit_code: " + lp_solve_exit_code);
+                System.out.println("lp_solve_objective_function: " + lp_solver.getObjective());
 
-            double [] ptrVariable  = lp_solver.getPtrVariables();
-            double [] primalSolution = lp_solver.getPtrPrimalSolution();
+                lp_solver.setOutputfile(solverOutputFilename);
+                System.out.println("LPSOLVE SOLVED MODEL");
+                lp_solver.printSolution(1);
 
+                double[] ptrVariable = lp_solver.getPtrVariables();
+                double[] primalSolution = lp_solver.getPtrPrimalSolution();
 
-            //double[] var = lp_solver.getPtrVariables();
-
+                //double[] var = lp_solver.getPtrVariables();
+            }
             //Read solution file
-
             Vector<Integer> medoids = new Vector<>();
-            //medoids.
-            BufferedReader br = new BufferedReader(new FileReader("solution_" + suffix + ".lp"));
+            BufferedReader br = new BufferedReader(new FileReader(solverOutputFilename));
             br.readLine();
             br.readLine();
             String line;
