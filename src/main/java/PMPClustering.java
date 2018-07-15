@@ -124,15 +124,13 @@ public class PMPClustering {
         d = distanceMatrixCalculator.calculateDistanceMatrix(graph);
 
         System.out.println("edgeDistanceMap has been calculated. \n");
-        //d.print(7,7);
-
 
         //--------------------------------------------end of matrix calculation----------------------------------------------------
 
         //edge clustering
         PBPolynomial sol = new PBPolynomial();
-        // <Cluster, Vector of Edges>
 
+        // <Cluster, Vector of Edges>
         HashMap<Integer, Vector<Integer>> cluster_edges = edgeClustering.clusterEdges(clustersNumber, d, suffix);
 
         //results of clustering
@@ -271,8 +269,6 @@ public class PMPClustering {
             node.getNodeData().setColor(rr / graph.getDegree(node), gg / graph.getDegree(node) , bb / graph.getDegree(node));
         }
 
-
-
         ExportController ec = Lookup.getDefault().lookup(ExportController.class);
         GraphExporter exporter = (GraphExporter) ec.getExporter("gexf");
 
@@ -347,36 +343,37 @@ public class PMPClustering {
 
         Option distanceTypeOption = new Option("d", "distance", true,
                 "the type of function to measure the distance between nodes.\n" +
-                        "Possible values: sp (shortest path) | gd (Generalize Degree) | cm (Commute Distance) | acm (Amplified Commute Distance).\n" +
-                        "If this option is omitted, the Generalize Degree distance function will be used.");
+                        "Possible values: \nsp (shortest path) \ngd (Generalize Degree) \ncm (Commute Distance)\nacm (Amplified Commute Distance).\n" +
+                        "If this option is omitted, the amplified commute distance function will be used.");
         distanceTypeOption.setRequired(false);
-        //distanceTypeOption.
         options.addOption(distanceTypeOption);
 
         Option clusterNumberOption = new Option("k",  true, "number of clusters to detect (int)");
         clusterNumberOption.setRequired(true);
         options.addOption(clusterNumberOption);
 
-
-        Option benchmark = new Option("b", "benchmark", false, "use benchmark format");
-        benchmark.setRequired(false);
-        options.addOption(benchmark);
-
         Option lineGraph = new Option("l", "linegraph", false, "produce line graph as output");
         lineGraph.setRequired(false);
         options.addOption(lineGraph);
 
-        Option edgeClusteringOption = new Option("e", "edgecluster", true,
-                "clustering algorithm to use for edges.\n" +
-                        "Possible values: pmp (p-Median) | kmd (k-Medoids) | kmn (K-Means).\n" +
+        Option edgeClusteringOption = new Option("a", "algorithm", true,
+                "Specifies algorithm that will be used to find disjoint edge clusters. Possible values: \n" +
+                        "pmp (p-median exact algorithm).  \n" +
+                        "kmd (k-medoids heuristic)\n" +
+                        "kmn (k-means heuristic).\n" +
                         "If this option is omitted, the P-Median algorithm will be used.");
         edgeClusteringOption.setRequired(false);
         options.addOption(edgeClusteringOption);
 
+        //benchmarking
+        Option benchmark = new Option("b", "benchmark", false, "use benchmark format");
+        benchmark.setRequired(false);
+        options.addOption(benchmark);
+
+        //benchmarking
         Option communitiesFileOption = new Option("c", "communitiesFile", true, "use communities file to validate benchmark");
         communitiesFileOption.setRequired(false);
         options.addOption(communitiesFileOption);
-
 
         Option output = new Option("o", "output", true,
                 "the name of the output file. If option was omitted, the name of the output file\n" +
@@ -386,15 +383,13 @@ public class PMPClustering {
 
         CommandLineParser parser = new DefaultParser();
         HelpFormatter formatter = new HelpFormatter();
+
         CommandLine cmd;
-
-
         try {
             cmd = parser.parse(options, args);
         } catch (ParseException e) {
             System.out.println(e.getMessage());
             formatter.printHelp("PMPClustering <-i input_file> <-k number_of_clusters> [-bcdm]", options);
-
             System.exit(1);
             return;
         }
@@ -406,7 +401,7 @@ public class PMPClustering {
             communitiesFile = cmd.getOptionValue("communitiesFile");
         }
 
-        DistanceMatrixCalculator distanceMatrixCalculator = new CommuteDistance(); //default distance calculator
+        DistanceMatrixCalculator distanceMatrixCalculator = new AmplifiedCommuteDistance(); //default distance calculator
 
         if (cmd.hasOption("distance")) {
             switch (cmd.getOptionValue("distance").toLowerCase()) {
@@ -424,7 +419,11 @@ public class PMPClustering {
                     break;
                 default: {
                     System.out.println("Wrong argument after distance option.");
-                    System.out.println("Possible values: sp (Shortest Path) | gd (Generalize Degree) | cm (Commute Distance) | acm (Amplified Commute Distance).");
+                    System.out.println("Possible values:\n " +
+                            "sp (shortest path)\n" +
+                            "gd (generalize Degree)\n" +
+                            "cm (commute/resistance distance)\n" +
+                            "acm (amplified commute distance).");
                     System.exit(1);
                 }
             }
@@ -432,8 +431,8 @@ public class PMPClustering {
 
         EdgeClustering edgeClustering = new PBPolynomial();
 
-        if (cmd.hasOption("edgecluster")) {
-            switch (cmd.getOptionValue("edgecluster").toLowerCase()) {
+        if (cmd.hasOption("algorithm")) {
+            switch (cmd.getOptionValue("algorithm").toLowerCase()) {
                 case "pmp":
                     edgeClustering = new PBPolynomial();
                     break;
@@ -444,18 +443,18 @@ public class PMPClustering {
                     edgeClustering = new KMeansWrapper();
                     break;
                 default: {
-                    System.out.println("Wrong argument after edge clustering option.");
-                    System.out.println("Possible values: pmp (P-Median) | kmd (K Medoids) | kmn (K-Means).");
+                    System.out.println("Wrong argument after edge clustering algorithm option.");
+                    System.out.println("Possible values: \n" +
+                            "pmp (p-median exact algorithm).  \n" +
+                            "kmd (k-medoids heuristic)\n" +
+                            "kmn (k-means heuristic).\n" +
+                            "If this option is omitted, the P-Median algorithm will be used.");
                     System.exit(1);
                 }
             }
         }
 
-//        String outputFilePath = cmd.getOptionValue("output");
-
-//        clustering.doClustering("karate.gml", "communities.dat", 10, false, true, true);
-//        clustering.doClustering("§", "communities.dat", 2, false, true, true);
         clustering.doClustering(inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
     }
-} //class
+}
 
