@@ -391,7 +391,7 @@ public class PMPClustering {
         options.addOption(communitiesFileOption);
 
         Option forceOption = new Option("f", "force", false, "" +
-                "The previous founded solution by lp_solver will not be used. lp_solver will be started forced.\n" +
+                "The previous founded solution by lp_solver will not be used. lp_solver will be started forcibly.\n" +
                 "The flag effects only the PMP exact edge clustering algorithm.\n" +
                 "By default algorithm will try to get previous founded solution");
         forceOption.setRequired(false);
