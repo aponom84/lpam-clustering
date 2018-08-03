@@ -1,3 +1,5 @@
+package latna;
+
 import Jama.Matrix;
 import org.gephi.graph.api.Edge;
 import org.gephi.graph.api.Graph;

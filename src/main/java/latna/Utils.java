@@ -1,3 +1,4 @@
+package latna;
 
 import Jama.Matrix;
 import Jama.SingularValueDecomposition;

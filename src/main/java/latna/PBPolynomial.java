@@ -1,3 +1,4 @@
+package latna;
 
 import lpsolve.*;
 import Jama.Matrix;

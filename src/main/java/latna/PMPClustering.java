@@ -1,3 +1,5 @@
+package latna;
+
 import Jama.Matrix;
 
 import java.io.*;

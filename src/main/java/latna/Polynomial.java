@@ -1,4 +1,4 @@
-
+package latna;
 
 import java.util.HashMap;
 import java.util.SortedSet;
