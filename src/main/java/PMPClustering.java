@@ -50,16 +50,18 @@ public class PMPClustering {
         return graph;
     }
     /**
-     * @param fileName
+     * @param outputDir directory that will be used as root for working directory
+     * @param fileName input file name in gml format
      * @param distanceMatrixCalculator
      * @param communitiesFile
      * @param clustersNumber
      * @param threshold
      * @param benchmark
-     * @param lineGraph
+     * @param lineGraph if true, it will build a line graph
      */
 
-    public void doClustering(String fileName, DistanceMatrixCalculator distanceMatrixCalculator, EdgeClustering edgeClustering,  String communitiesFile, int clustersNumber, double threshold, boolean benchmark,  boolean lineGraph) {
+    public void doClustering(File outputDir, String fileName, DistanceMatrixCalculator distanceMatrixCalculator, EdgeClustering edgeClustering,  String communitiesFile, int clustersNumber, double threshold, boolean benchmark,  boolean lineGraph) {
+
         File file = new File(fileName);
         if (!file.exists()) {
             System.out.println("Error: file does not exist: " + file.toString());
@@ -107,7 +109,7 @@ public class PMPClustering {
             graph = graphModel.getGraph();
 
             try {
-                PrintWriter writer = new PrintWriter("network_format" + suffix + ".dat", "UTF-8");
+                PrintWriter writer = new PrintWriter(new File( outputDir, "network_format" + suffix + ".dat"), "UTF-8" );
                 for (Edge edge : graph.getEdges()) {
                     writer.println(String.valueOf(edge.getTarget().getId()) + "\t" + String.valueOf(edge.getSource().getId()));
                 }
@@ -199,11 +201,11 @@ public class PMPClustering {
 
         System.out.println("Clusters: " + Arrays.asList(format_clusters));
 
-        sol.writeForMetrics(format_clusters, "pmp_" + suffix + ".dat");
+        sol.writeForMetrics(format_clusters,  new File(outputDir, "pmp_" + suffix + ".dat") );
         if(benchmark)
         {
             HashMap<Integer, Set<Integer>> cl = sol.formatClustersFile(communitiesFile);
-            sol.writeForMetrics(cl, "truth_" + suffix + ".dat");
+            sol.writeForMetrics(cl, new File(outputDir,"truth_" + suffix + ".dat") );
             System.out.println("Clusters: " + Arrays.asList(cl));
         }
 
@@ -323,7 +325,7 @@ public class PMPClustering {
             exporter.setWorkspace(lineGraphWorkspace);
 
             try {
-                ec.exportFile(new File( String.format("%s_out_line.gexf", suffix )), exporter);
+                ec.exportFile(new File(outputDir, String.format("%s_out_line.gexf", suffix )), exporter);
             } catch (IOException ex) {
                 ex.printStackTrace();
                 return;
@@ -333,7 +335,7 @@ public class PMPClustering {
 
         } else {
             try {
-                ec.exportFile(new File( String.format("%s_out.gexf", suffix) ) , exporter);
+                ec.exportFile(new File(outputDir, String.format("%s_out.gexf", suffix) ) , exporter);
             } catch (IOException ex) {
                 throw new Error(ex);
             }
@@ -397,9 +399,11 @@ public class PMPClustering {
         forceOption.setRequired(false);
         options.addOption(forceOption);
 
-        Option output = new Option("o", "output", true,
+        Option output = new Option("o", "outputDir", true,
                 "the name of the output file. If option was omitted, the name of the output file\n" +
                         "will be composed automatically as \"{suffix}_{distanceName}_{clusterNumber}_out.gexf\" ");
+        //TODO rewrite this usage
+
         output.setRequired(false);
         options.addOption(output);
 
@@ -483,7 +487,12 @@ public class PMPClustering {
             }
         }
 
-        clustering.doClustering(inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, threshold, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
+        File workingDir = cmd.hasOption("outputDir")? new File(cmd.getOptionValue("outputDir").toLowerCase()):
+                new File(new File(inputFilePath).getName().split("\\.")[0] + "_" + distanceMatrixCalculator.getShortName() + "_" + edgeClustering.getShortName() + "_" + String.valueOf(clusterNumber));
+        if (!workingDir.exists())
+            if (workingDir.mkdir() )
+                throw new Error("Can not create output directory: " + workingDir.getAbsolutePath());
+        clustering.doClustering( workingDir , inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, threshold, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
     }
 }
 

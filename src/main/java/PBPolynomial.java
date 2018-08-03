@@ -51,10 +51,10 @@ public class PBPolynomial  implements EdgeClustering {
         }
     }
 
-    public void writeForMetrics(HashMap<Integer, Set<Integer>> clusters, String fileName)
+    public void writeForMetrics(HashMap<Integer, Set<Integer>> clusters, File file)
     {
         try{
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+            PrintWriter writer = new PrintWriter(file, "UTF-8");
             for(Set<Integer> cluster: clusters.values()){
                 int size = cluster.size();
                 int count = 0;
