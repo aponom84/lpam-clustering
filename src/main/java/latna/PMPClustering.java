@@ -133,7 +133,7 @@ public class PMPClustering {
         //--------------------------------------------end of matrix calculation----------------------------------------------------
 
         //edge clustering
-        PBPolynomial sol = new PBPolynomial();
+        PBPolynomial sol = new PBPolynomial(outputDir, false);
 
         // <Cluster, Vector of Edges>
         HashMap<Integer, Vector<Integer>> cluster_edges = edgeClustering.clusterEdges(clustersNumber, d, suffix);
@@ -464,36 +464,37 @@ public class PMPClustering {
             }
         }
 
-        EdgeClustering edgeClustering = new PBPolynomial();
 
-        if (cmd.hasOption("algorithm")) {
-            switch (cmd.getOptionValue("algorithm").toLowerCase()) {
-                case "pmp":
-                    edgeClustering = new PBPolynomial(cmd.hasOption("force"));
-                    break;
-                case "kmd":
-                    edgeClustering = new KMedoidsWrapper();
-                    break;
-                case "kmn":
-                    edgeClustering = new KMeansWrapper();
-                    break;
-                default: {
-                    System.out.println("Wrong argument after edge clustering algorithm option.");
-                    System.out.println("Possible values: \n" +
-                            "pmp (p-median exact algorithm).  \n" +
-                            "kmd (k-medoids heuristic)\n" +
-                            "kmn (k-means heuristic).\n" +
-                            "If this option is omitted, the P-Median algorithm will be used.");
-                    System.exit(1);
-                }
+        EdgeClustering edgeClustering = null;
+        String algorithm =  cmd.hasOption("algorithm")? cmd.getOptionValue("algorithm").toLowerCase() : "pmp";
+
+        File workingDir = cmd.hasOption("outputDir")? new File(cmd.getOptionValue("outputDir").toLowerCase()):
+                new File(new File(inputFilePath).getName().split("\\.")[0] + "_" + distanceMatrixCalculator.getShortName() + "_" + algorithm + "_" + String.valueOf(clusterNumber));
+        if (!workingDir.exists())
+            if (!workingDir.mkdir() )
+                throw new Error("Can not create output directory: " + workingDir.getAbsolutePath());
+
+        switch (algorithm) {
+            case "pmp":
+                edgeClustering = new PBPolynomial(workingDir, cmd.hasOption("force"));
+                break;
+            case "kmd":
+                edgeClustering = new KMedoidsWrapper();
+                break;
+            case "kmn":
+                edgeClustering = new KMeansWrapper();
+                break;
+            default: {
+                System.out.println("Wrong argument after edge clustering algorithm option.");
+                System.out.println("Possible values: \n" +
+                        "pmp (p-median exact algorithm).  \n" +
+                        "kmd (k-medoids heuristic)\n" +
+                        "kmn (k-means heuristic).\n" +
+                        "If this option is omitted, the P-Median algorithm will be used.");
+                System.exit(1);
             }
         }
 
-        File workingDir = cmd.hasOption("outputDir")? new File(cmd.getOptionValue("outputDir").toLowerCase()):
-                new File(new File(inputFilePath).getName().split("\\.")[0] + "_" + distanceMatrixCalculator.getShortName() + "_" + edgeClustering.getShortName() + "_" + String.valueOf(clusterNumber));
-        if (!workingDir.exists())
-            if (workingDir.mkdir() )
-                throw new Error("Can not create output directory: " + workingDir.getAbsolutePath());
         clustering.doClustering( workingDir , inputFilePath, distanceMatrixCalculator, edgeClustering, communitiesFile, clusterNumber, threshold, cmd.hasOption("benchmark"), cmd.hasOption("linegraph"));
     }
 }

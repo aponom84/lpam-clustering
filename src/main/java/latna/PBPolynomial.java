@@ -13,6 +13,7 @@ import java.util.List;
 public class PBPolynomial  implements EdgeClustering {
 
     public static final boolean DEBUG_MODE = false;
+    private File outputDir;
 
     private boolean FORCE_MODE = false; //if true, the previous founded solution by lp_solver will not be used
 
@@ -20,13 +21,14 @@ public class PBPolynomial  implements EdgeClustering {
      *
      * @param force_mode if true, the previous founded solution by lp_solver will not be used
      */
-    public PBPolynomial(boolean force_mode) {
+    public PBPolynomial(File outputDir, boolean force_mode) {
+        this.outputDir = outputDir;
         FORCE_MODE = force_mode;
     }
 
-    public PBPolynomial() {
-         this(false);
-    }
+//    public PBPolynomial() {
+//         this(false);
+//    }
 
     public HashMap<Integer, Set<Integer>> formatClustersFile(String fileName)
     {
@@ -199,8 +201,8 @@ public class PBPolynomial  implements EdgeClustering {
                 //end replacing
                 //Creating model file
 
-                PrintWriter writer = new PrintWriter("model_" + suffix + ".lp", "UTF-8");
-                PrintWriter cplex_writer = new PrintWriter("cplex_model_" + suffix + ".lp", "UTF-8");
+                PrintWriter writer = new PrintWriter(new File(outputDir, "model_" + suffix + ".lp"), "UTF-8");
+                PrintWriter cplex_writer = new PrintWriter(new File(outputDir,"cplex_model_" + suffix + ".lp"), "UTF-8");
                 writer.print("min: ");
                 cplex_writer.println("minimize");
                 int count = 0;
@@ -308,11 +310,11 @@ public class PBPolynomial  implements EdgeClustering {
             //end for binaries
             System.out.println("Model ready");
 
-            String solverOutputFilename = "solution_" + suffix + ".lp";
+            String solverOutputFilename = new File(outputDir, "solution_" + suffix + ".lp" ).getAbsolutePath();
 
-            if (!new File(solverOutputFilename).exists() || FORCE_MODE){
+            if (!new File(solverOutputFilename).exists() || FORCE_MODE) {
                 //solve
-                LpSolve lp_solver = LpSolve.readLp("model_" + suffix + ".lp", LpSolve.NORMAL, "PMP");
+                LpSolve lp_solver = LpSolve.readLp(new File (outputDir,"model_" + suffix + ".lp").getAbsolutePath(), LpSolve.NORMAL, "PMP");
                 System.out.println("LPSOLVE READ MODEL");
                 lp_solver.setAddRowmode(false);
                 //lp_solver.setImprove(0);
@@ -383,15 +385,4 @@ public class PBPolynomial  implements EdgeClustering {
         return "PMP";
     }
 
-    public static void main(String[] args) {
-        PBPolynomial solver = new PBPolynomial();
-        int n = 4;
-        int p = 2;
-
-        double[][] ar = {{7., 15., 10., 7., 10.}, {10., 17., 4., 11., 22.}, {16., 7., 6., 18., 14.}, {11., 7., 6., 12., 8.}};
-        Matrix costs = new Matrix(ar);
-        solver.clusterEdges(p, costs, "comms");
-        solver.formatClustersFile("comms.dat");
-
-    }
 }
