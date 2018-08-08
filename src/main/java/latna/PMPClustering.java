@@ -123,12 +123,43 @@ public class PMPClustering {
 
         }
 
-        System.out.println("start distance map calculation. \n");
+
 
         Matrix d;
-        d = distanceMatrixCalculator.calculateDistanceMatrix(graph);
+        File matrixFile = new File(outputDir,"d_matrix_"+ suffix + ".ser");
+        //TODO check force mode
+        System.out.print("Checking file " + matrixFile.getAbsolutePath() +"...");
+        if (!matrixFile.exists()) {
+            System.out.println("not found");
+            System.out.println("Starting calculation of the distance map\n");
+            d = distanceMatrixCalculator.calculateDistanceMatrix(graph);
+            System.out.println("Distance map between edges has been calculated. \n");
+            try {
 
-        System.out.println("edgeDistanceMap has been calculated. \n");
+                FileOutputStream fileOut = new FileOutputStream(matrixFile);
+                ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                out.writeObject(d);
+                out.close();
+                fileOut.close();
+                System.out.printf("Matrix is saved in " + matrixFile.getAbsolutePath());
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+        } else {
+            try {
+                System.out.println("found");
+                FileInputStream fileIn = new FileInputStream(matrixFile);
+                ObjectInputStream in = new ObjectInputStream(fileIn);
+                d = (Matrix) in.readObject();
+                in.close();
+                fileIn.close();
+                System.out.println("Distance map between edges has been loaded. \n");
+            } catch (IOException i) {
+                throw  new Error(i);
+            } catch (ClassNotFoundException c) {
+                throw  new Error(c);
+            }
+        }
 
         //--------------------------------------------end of matrix calculation----------------------------------------------------
 
@@ -136,7 +167,45 @@ public class PMPClustering {
         PBPolynomial sol = new PBPolynomial(outputDir, false);
 
         // <Cluster, Vector of Edges>
-        HashMap<Integer, Vector<Integer>> cluster_edges = edgeClustering.clusterEdges(clustersNumber, d, suffix);
+        HashMap<Integer, Vector<Integer>> cluster_edges;
+//
+        File clusterEdgesFile = new File(outputDir,"cluster_edges_hmap_"+ suffix + ".ser");
+        //TODO check force mode
+        System.out.print("Checking file " + matrixFile.getAbsolutePath() +"...");
+        if (!clusterEdgesFile.exists()) {
+            System.out.println("not found");
+            System.out.println("Starting calculation of the distance map\n");
+            cluster_edges = edgeClustering.clusterEdges(clustersNumber, d, suffix);
+
+            System.out.println("Distance map between edges has been calculated. \n");
+            try {
+
+                FileOutputStream fileOut = new FileOutputStream(clusterEdgesFile);
+                ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                out.writeObject(cluster_edges);
+                out.close();
+                fileOut.close();
+                System.out.printf("Matrix is saved in " + clusterEdgesFile.getAbsolutePath());
+            } catch (IOException i) {
+                i.printStackTrace();
+            }
+        } else {
+            try {
+                System.out.println("found");
+                FileInputStream fileIn = new FileInputStream(clusterEdgesFile);
+                ObjectInputStream in = new ObjectInputStream(fileIn);
+                cluster_edges = (HashMap<Integer, Vector<Integer>>) in.readObject();
+                in.close();
+                fileIn.close();
+                System.out.println("Distance map between edges has been loaded. \n");
+            } catch (IOException i) {
+                throw  new Error(i);
+            } catch (ClassNotFoundException c) {
+                throw  new Error(c);
+            }
+        }
+
+
 
         //results of clustering
         HashMap<Integer/*Node*/, HashMap<Integer, Integer>/* cluster id->count */> node_clusters = new HashMap<>();
@@ -204,12 +273,12 @@ public class PMPClustering {
         System.out.println("Clusters: " + Arrays.asList(format_clusters));
 
         sol.writeForMetrics(format_clusters,  new File(outputDir, "pmp_" + suffix + ".dat") );
-        if(benchmark)
-        {
-            HashMap<Integer, Set<Integer>> cl = sol.formatClustersFile(communitiesFile);
-            sol.writeForMetrics(cl, new File(outputDir,"truth_" + suffix + ".dat") );
-            System.out.println("Clusters: " + Arrays.asList(cl));
-        }
+//        if(benchmark)
+//        {
+//            HashMap<Integer, Set<Integer>> cl = sol.formatClustersFile(communitiesFile);
+//            sol.writeForMetrics(cl, new File(outputDir,"truth_" + suffix + ".dat") );
+//            System.out.println("Clusters: " + Arrays.asList(cl));
+//        }
 
         float [] r = {1.0f, 0.0f, 0.8f, 0.0f, 0, 1, 1, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f };
         float [] g = {0.0f, 0.6f, 0.0f, 0.6f, 1, 0, 1, 0.7f, 0.6f, 0.4f, 0.5f, 0.3f };
@@ -464,8 +533,6 @@ public class PMPClustering {
             }
         }
 
-
-        EdgeClustering edgeClustering = null;
         String algorithm =  cmd.hasOption("algorithm")? cmd.getOptionValue("algorithm").toLowerCase() : "pmp";
 
         File workingDir = cmd.hasOption("outputDir")? new File(cmd.getOptionValue("outputDir").toLowerCase()):
@@ -474,6 +541,7 @@ public class PMPClustering {
             if (!workingDir.mkdir() )
                 throw new Error("Can not create output directory: " + workingDir.getAbsolutePath());
 
+        EdgeClustering edgeClustering = null;
         switch (algorithm) {
             case "pmp":
                 edgeClustering = new PBPolynomial(workingDir, cmd.hasOption("force"));

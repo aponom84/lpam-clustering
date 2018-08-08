@@ -25,6 +25,6 @@ public class KMeansWrapper implements EdgeClustering {
 
     @Override
     public String getShortName() {
-        return "KMN";
+        return "kmn";
     }
 }

@@ -45,6 +45,6 @@ public class KMedoidsWrapper implements EdgeClustering{
 
     @Override
     public String getShortName() {
-        return "KMD";
+        return "kmd";
     }
 }

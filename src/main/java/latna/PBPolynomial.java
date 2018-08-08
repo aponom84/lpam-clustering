@@ -36,7 +36,7 @@ public class PBPolynomial  implements EdgeClustering {
             HashMap<Integer, Set<Integer>> clusters = new HashMap<>();
             String line;
             while ((line = br.readLine()) != null) {
-                String[] tokens = line.split("\t");
+                String[] tokens = line.split("\\s");
                 int vertex = Integer.parseInt(tokens[0]);
                 String[] comms = tokens[1].split(" ");
                 for (String s: comms) {
@@ -178,7 +178,7 @@ public class PBPolynomial  implements EdgeClustering {
 
                     if (DEBUG_MODE) System.out.println(new String(new char[80]).replace("\0", "-"));
                     objFunc.plus(a);
-                    System.out.println(String.valueOf(i + 1) + " / " + String.valueOf(n));
+                    //System.out.println(String.valueOf(i + 1) + " / " + String.valueOf(n));
                 }
 
                 if (DEBUG_MODE) {
@@ -382,7 +382,7 @@ public class PBPolynomial  implements EdgeClustering {
 
     @Override
     public String getShortName() {
-        return "PMP";
+        return "pmp";
     }
 
 }
