@@ -245,10 +245,12 @@ public class PMPClustering {
 
         System.out.println("PMP clusters: " + Arrays.asList(node_clusters));
 
-        //claculate the final overlapping structure of communities
+        //calculate the final overlapping structure of the communities
         HashMap<Integer/*Cluster id*/, Set<Integer>/*Nodes*/> format_clusters = new HashMap<>();
 
         for (Integer nodeId : node_clusters.keySet()) {
+            graph.getNode(nodeId).getNodeData().getAttributes().setValue("Clusters","");
+
             if (node_clusters.get(nodeId).size() > 0) {
                 double sum = 0;
 
@@ -264,6 +266,9 @@ public class PMPClustering {
                     if (belonging >= threshold) {
                         format_clusters.computeIfAbsent(clusterId,  kk -> new TreeSet<>());
                         format_clusters.get(clusterId).add(nodeId);
+                        String oldValue = (String) graph.getNode(nodeId).getNodeData().getAttributes().getValue("Clusters");
+                        graph.getNode(nodeId).getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
+//                        graph.getNode(nodeId).
                     }
                 }
                 System.out.println();
@@ -286,58 +291,14 @@ public class PMPClustering {
 
         Set <Node> coloredNodes = new HashSet();
 
-        for (Node node: graph.getNodes())
-            node.getNodeData().getAttributes().setValue("ClusterCount", 0);
 
         //gather everything in one place
+
         int clusterNumber = 0;
         for (Vector <Integer> cluster: cluster_edges.values()) {
             for (Integer edge_id: cluster) {
                 Edge edge = graph.getEdge(edge_id);
                 edge.getEdgeData().setColor(r[clusterNumber], g[clusterNumber], b[clusterNumber]);
-                //edge.getEdgeData().getAttributes().setValue("Cluster", clusterNumber);
-
-                int target_count = (int) edge.getTarget().getNodeData().getAttributes().getValue("ClusterCount");
-                int source_count = (int) edge.getSource().getNodeData().getAttributes().getValue("ClusterCount");
-
-                boolean write_target = true, write_source = true;
-
-                if (target_count != 0) {
-                    for (int j = 1; j <= target_count; j++) {
-                        int clust = (int) edge.getTarget().getNodeData().getAttributes().getValue("ClusterNumb" + j);
-                        if (clust == (c.indexOf(cluster_edges.keySet().toArray()[clusterNumber]) + 1)) {
-                            write_target = false;
-                            break;
-                        }
-                    }
-                }
-
-                if (source_count != 0) {
-                    for (int j = 1; j <= source_count; j++) {
-                        int clust = (int) edge.getSource().getNodeData().getAttributes().getValue("ClusterNumb" + j);
-                        if (clust == (c.indexOf(cluster_edges.keySet().toArray()[clusterNumber]) + 1)) {
-                            write_source= false;
-                            break;
-                        }
-                    }
-                }
-
-                //что вот тут такое ниже - не понятно!
-                edge.getEdgeData().getAttributes().setValue("ClusterNumb", (c.indexOf(cluster_edges.keySet().toArray()[clusterNumber]) + 1));
-                edge.getEdgeData().setLabel(String.valueOf(c.indexOf(cluster_edges.keySet().toArray()[clusterNumber]) + 1));
-                edge.getEdgeData().getAttributes().setValue("EdgeId", edge_id);
-                if (write_source)
-                {
-                    source_count++;
-                    edge.getSource().getNodeData().getAttributes().setValue("ClusterNumb" + source_count, (c.indexOf(cluster_edges.keySet().toArray()[clusterNumber]) + 1));
-                    edge.getSource().getNodeData().getAttributes().setValue("ClusterCount", source_count);
-                }
-                if (write_target)
-                {
-                    target_count++;
-                    edge.getTarget().getNodeData().getAttributes().setValue("ClusterNumb" + target_count, (c.indexOf(cluster_edges.keySet().toArray()[clusterNumber]) + 1));
-                    edge.getTarget().getNodeData().getAttributes().setValue("ClusterCount", target_count);
-                }
             }
             clusterNumber++;
         }
