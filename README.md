@@ -4,7 +4,7 @@
 
 This and java implementation of the method for finding overlapping communities  in network.
 Below you can find an example of method output for "School friendship" dataset.
-### School friendship ###
+
 ![school friendship](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/school-2_ACM_pmp_7_out.png)
 
 
