@@ -4,8 +4,11 @@
 
 This and java implementation of the method for finding overllaping communities  in network.
 Below you can find an example of method output for "School friendship" dataset.
+### School friendship ###
+![school friendship](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/school-2_ACM_pmp_7_out.png)
 
-![alt text](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/school-2_ACM_pmp_7_out.png)
+### American Football Club ###
+![fooball club](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/footballTSEinput_CM_kmd_12_out.png)
 
 ./Scripts – directory for all Jupyter notebook that were used for computation experimenst
 ./final_pictures – contains all pictures and gephi files.
