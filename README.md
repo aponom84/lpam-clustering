@@ -36,5 +36,7 @@ make
 * Alexander Ponomarenko (aponom84@gmail.com): Basic implementation of link partitionig algorithm on java, calculating commute distance, jupyter notebooks and collecting everything together
 
 ## More Output Examples ##
+### Karate Club ###
+![Karate Club](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/karate_ACM_kmd_2_out.png)
 ### American Football Club ###
-![fooball club](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/footballTSEinput_CM_kmd_12_out.png)
+![American Fooball Club](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/footballTSEinput_CM_kmd_12_out.png)
