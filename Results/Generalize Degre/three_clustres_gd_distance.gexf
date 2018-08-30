@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
+  <meta lastmodifieddate="2015-04-22">
+    <creator>Gephi 0.8.1</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <nodes>
+      <node id="23" label="23">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-896.39746" y="3089.113" z="0.0"></viz:position>
+        <viz:color r="0" g="153" b="255"></viz:color>
+      </node>
+      <node id="24" label="24">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="970.43835" y="3118.0715" z="0.0"></viz:position>
+        <viz:color r="0" g="153" b="255"></viz:color>
+      </node>
+      <node id="25" label="25">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="1072.0399" y="1766.7678" z="0.0"></viz:position>
+        <viz:color r="102" g="77" b="230"></viz:color>
+      </node>
+      <node id="26" label="26">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-909.1945" y="1715.967" z="0.0"></viz:position>
+        <viz:color r="102" g="77" b="230"></viz:color>
+      </node>
+      <node id="27" label="27">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="137.30376" y="710.1097" z="0.0"></viz:position>
+        <viz:color r="179" g="19" b="210"></viz:color>
+      </node>
+      <node id="29" label="29">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="177.01744" y="-1951.6157" z="0.0"></viz:position>
+        <viz:color r="210" g="0" b="179"></viz:color>
+      </node>
+      <node id="30" label="30">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-510.8111" y="-2446.2007" z="0.0"></viz:position>
+        <viz:color r="255" g="0" b="0"></viz:color>
+      </node>
+      <node id="31" label="31">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="938.11926" y="-2468.492" z="0.0"></viz:position>
+        <viz:color r="255" g="0" b="0"></viz:color>
+      </node>
+      <node id="32" label="32">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-457.43335" y="-3280.5938" z="0.0"></viz:position>
+        <viz:color r="217" g="0" b="153"></viz:color>
+      </node>
+      <node id="34" label="34">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="932.0537" y="-3236.0112" z="0.0"></viz:position>
+        <viz:color r="230" g="0" b="102"></viz:color>
+      </node>
+      <node id="36" label="36">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-1670.1887" y="-1316.7858" z="0.0"></viz:position>
+        <viz:color r="204" g="0" b="204"></viz:color>
+      </node>
+      <node id="37" label="37">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-1539.1058" y="-23.832825" z="0.0"></viz:position>
+        <viz:color r="204" g="0" b="204"></viz:color>
+      </node>
+      <node id="38" label="38">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="-601.78925" y="-684.06757" z="0.0"></viz:position>
+        <viz:color r="204" g="0" b="204"></viz:color>
+      </node>
+      <node id="39" label="39">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="208.9727" y="-710.79596" z="0.0"></viz:position>
+        <viz:color r="204" g="0" b="204"></viz:color>
+      </node>
+      <node id="40" label="40">
+        <attvalues></attvalues>
+        <viz:size value="4.0"></viz:size>
+        <viz:position x="208.9727" y="-710.79596" z="0.0"></viz:position>
+        <viz:color r="153" g="153" b="153"></viz:color>
+      </node>
+      <node id="42" label="42">
+        <attvalues></attvalues>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="-37.794186" y="3838.6548" z="0.0"></viz:position>
+        <viz:color r="0" g="153" b="255"></viz:color>
+      </node>
+      <node id="43" label="43">
+        <attvalues></attvalues>
+        <viz:size value="100.0"></viz:size>
+        <viz:position x="1977.7964" y="2590.5068" z="0.0"></viz:position>
+        <viz:color r="0" g="153" b="255"></viz:color>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="23" target="24">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="23" target="42">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="25" target="23">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="25" target="24">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="25" target="26">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="26" target="23">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="26" target="24">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="27" target="23">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="27" target="24">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="27" target="25">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="27" target="26">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="27" target="39">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="29" target="39">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="30" target="29">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="31" target="29">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="31" target="30">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="31" target="34">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="32" target="29">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="32" target="30">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="32" target="31">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="32" target="36">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="34" target="29">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="34" target="30">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="34" target="32">
+        <viz:color r="255" g="0" b="0"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="36" target="38">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="37" target="36">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="38" target="37">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="39" target="38">
+        <viz:color r="204" g="0" b="204"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="42" target="24">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="43" target="24">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+      <edge source="43" target="25">
+        <viz:color r="0" g="153" b="255"></viz:color>
+        <attvalues></attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

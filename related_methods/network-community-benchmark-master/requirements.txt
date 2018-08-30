@@ -1,0 +1,6 @@
+argparse>=1.2.1
+distribute>=0.6.24
+docopt>=0.6.1
+scipy
+scikit-learn>=0.14.1
+networkx
