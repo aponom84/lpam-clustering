@@ -2,11 +2,28 @@
 
 ## What it is? ##
 
-This and java implementation of the method for finding overllaping communities  in networks
+This and java implementation of the method for finding overllaping communities  in network.
+Below you can find an example of method output for "School friendship" dataset.
+
+![alt text](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/school-2_ACM_pmp_7_out.png)
+
+./Scripts – directory for all Jupyter notebook that were used for computation experimenst
+./final_pictures – contains all pictures and gephi files.
+./lpam – source code of lpam method
+./datasets – contains realworld datasets and sysntetic datasets 
+./related_methids – 
+./literature – papers about overllaping communities detection methods in networks
 
 ## Compilation ##
 In order to repoduce all computation experiments you should compile all method in the related_methods directory 
-and tool for measuring ONMI in the directory Overlapping-NMI. Just go to corresponding folder and type "cmake".
+and tool for measuring ONMI in the directory Overlapping-NMI. 
+Just go to corresponding folder and type "cmake".
+
+```
+cd Overlapping-NMI
+make
+```
+...TODO
 
 ## Contributors ##
 
