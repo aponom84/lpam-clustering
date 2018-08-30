@@ -1,8 +1,8 @@
-# Link Partitioning Around Medoids (lpam) – Tool for Overlaping Communities Detection in Networks
+# Link Partitioning Around Medoids (lpam) – Tool for Overlapping Communities Detection in Networks
 
 ## What it is? ##
 
-This and java implementation of the method for finding overllaping communities  in network.
+This and java implementation of the method for finding overlapping communities  in network.
 Below you can find an example of method output for "School friendship" dataset.
 ### School friendship ###
 ![school friendship](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/school-2_ACM_pmp_7_out.png)
@@ -26,12 +26,14 @@ Just go to corresponding folder and type "cmake".
 cd Overlapping-NMI
 make
 ```
+
+To find exact solution for k-medois the installation of [lp_solver](http://lpsolve.sourceforge.net/5.5/) is requared.
 ...TODO
 
 ## Contributors ##
 
-* Leonid Peculias: idea of overlaping communities detection based on the link partitoing with the help of non-overlaping communities detection methods based on the partition around medoids
-* Marat Shamshetdinov (m.shamshetdinov@gmail.com): Implementation of exact model for lp_solver and cplex solvers.
+* Leonidas Pitsoulis (pitsouli@auth.gr): idea of overlapping communities detection based on the link partitoing with the help of non-overlapping communities detection methods based on the partition around medoids
+* Marat Shamshetdinov (m.shamshetdinov@gmail.com): Implementation of the exact model for P-Median prolem for lp_solver and cplex solvers.
 * Nikit Putehin: implementation of amplified commute distance and heuristics method for findg k-medoids (Clarance and k-meanns)
 * Alexander Ponomarenko (aponom84@gmail.com): Basic implementation of link partitionig algorithm on java, calculating commute distance, jupyter notebooks and collecting everything together
 
