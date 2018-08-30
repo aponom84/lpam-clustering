@@ -32,7 +32,7 @@ To find exact solution for k-medois the installation of [lp_solver](http://lpsol
 
 ## Contributors ##
 
-* Leonidas Pitsoulis (pitsouli@auth.gr): idea of overlapping communities detection based on the link partitoing with the help of non-overlapping communities detection methods based on the partition around medoids
+* Leonidas Pitsoulis (pitsouli@auth.gr): idea of overlapping communities detection based on the link partitoing with the help of non-overlapping communities detection methods based on the partitioning around medoids
 * Marat Shamshetdinov (m.shamshetdinov@gmail.com): Implementation of the exact model for P-Median prolem for lp_solver and cplex solvers.
 * Nikit Putehin: implementation of amplified commute distance and heuristics method for findg k-medoids (Clarance and k-meanns heuristics)
 * Alexander Ponomarenko (aponom84@gmail.com): Basic implementation of link partitionig algorithm on java, calculating commute distance, jupyter notebooks and collecting everything together
