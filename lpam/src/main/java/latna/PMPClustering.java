@@ -30,6 +30,7 @@ public class PMPClustering {
                 String[] tokens = line.split("\t");
                 int vertexA = Integer.parseInt(tokens[0]);
                 int vertexB = Integer.parseInt(tokens[1]);
+
                 Node nodeA = graph.getNode(String.valueOf(vertexA));
                 Node nodeB = graph.getNode(String.valueOf(vertexB));
                 if ( nodeA == null)
@@ -253,7 +254,7 @@ public class PMPClustering {
         HashMap<Integer/*Cluster id*/, Set<Integer>/*Nodes*/> format_clusters = new HashMap<>();
 
         for (Integer nodeId : node_clusters.keySet()) {
-            graph.getNode(nodeId).getNodeData().getAttributes().setValue("Clusters","");
+            graph.getNode(String.valueOf(nodeId) ).getNodeData().getAttributes().setValue("Clusters","");
 
             if (node_clusters.get(nodeId).size() > 0) {
                 double sum = 0;
@@ -270,8 +271,8 @@ public class PMPClustering {
                     if (belonging >= threshold) {
                         format_clusters.computeIfAbsent(clusterId,  kk -> new TreeSet<>());
                         format_clusters.get(clusterId).add(nodeId);
-                        String oldValue = (String) graph.getNode(nodeId).getNodeData().getAttributes().getValue("Clusters");
-                        graph.getNode(nodeId).getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
+                        String oldValue = (String) graph.getNode(String.valueOf(nodeId) ).getNodeData().getAttributes().getValue("Clusters");
+                        graph.getNode(String.valueOf(nodeId) ).getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
 
                     }
                 }
@@ -549,9 +550,9 @@ public class PMPClustering {
                 String[] tokens = line.split("\\s");
                 for (String token: tokens) {
                     int nodeId = Integer.parseInt(token);
-                    if (graph.getNode(nodeId) != null) {
-                        String oldValue = (String) graph.getNode(nodeId).getNodeData().getAttributes().getValue("GroundTruth");
-                        graph.getNode(nodeId).getNodeData().getAttributes().setValue(
+                    if (graph.getNode(String.valueOf(nodeId))  != null) {
+                        String oldValue = (String) graph.getNode(String.valueOf(nodeId)) .getNodeData().getAttributes().getValue("GroundTruth");
+                        graph.getNode(String.valueOf(nodeId)).getNodeData().getAttributes().setValue(
                                 "GroundTruth",(oldValue != null) && (oldValue != "") ? oldValue + ", " + String.valueOf(clusterNumber): String.valueOf(clusterNumber)
                         ) ;
                     }
@@ -559,7 +560,7 @@ public class PMPClustering {
             }
         }
         catch (Exception e) {
-            System.out.println("Waring! Can not read ground truth file. Check file: " + fileName);
+            System.out.println("Warning! Can not read ground truth file. Check file: " + fileName);
             e.printStackTrace();
         }
     }

@@ -1,0 +1,10 @@
+-N 40
+-k 6
+-maxk 20
+-mu 0.1
+-t1 2
+-t2 1
+-minc 5
+-maxc 25
+-on 5
+-om 2
