@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2018-09-10">
+    <creator>Gephi 0.9</creator>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="groundtruth" title="GroundTruth" type="string"></attribute>
+      <attribute id="clusteringresult" title="ClusteringResult" type="string"></attribute>
+    </attributes>
+    <nodes>
+      <node id="1" label="1">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-415.51068" y="203.17857"></viz:position>
+      </node>
+      <node id="2" label="2">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="300.9713" y="292.31967"></viz:position>
+      </node>
+      <node id="3" label="3">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="522.55536" y="-361.5816"></viz:position>
+      </node>
+      <node id="4" label="4">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="492.22955" y="-363.99838"></viz:position>
+      </node>
+      <node id="5" label="5">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="259.19836" y="-222.977"></viz:position>
+      </node>
+      <node id="6" label="6">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-330.30536" y="-188.9981"></viz:position>
+      </node>
+      <node id="7" label="7">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="18.102663" y="478.6766"></viz:position>
+      </node>
+      <node id="8" label="8">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-292.72418" y="92.13651"></viz:position>
+      </node>
+      <node id="9" label="9">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-130.98373" y="-208.77489"></viz:position>
+      </node>
+      <node id="10" label="10">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-158.90686" y="-182.02596"></viz:position>
+      </node>
+      <node id="11" label="11">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-211.55592" y="-115.46722"></viz:position>
+      </node>
+      <node id="12" label="12">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="86.502014" y="-52.26336"></viz:position>
+      </node>
+      <node id="13" label="13">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="487.69836" y="-7.053245"></viz:position>
+      </node>
+      <node id="14" label="14">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-407.4659" y="-165.41362"></viz:position>
+      </node>
+      <node id="15" label="15">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-90.7832" y="289.98245"></viz:position>
+      </node>
+      <node id="16" label="16">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="366.40326" y="221.43199"></viz:position>
+      </node>
+      <node id="17" label="17">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-261.65417" y="-20.803307"></viz:position>
+      </node>
+      <node id="18" label="18">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="137.63824" y="341.3657"></viz:position>
+      </node>
+      <node id="19" label="19">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-244.67218" y="526.8158"></viz:position>
+      </node>
+      <node id="20" label="20">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-0.43282947" y="-337.93225"></viz:position>
+      </node>
+      <node id="21" label="21">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="361.01788" y="-115.46212"></viz:position>
+      </node>
+      <node id="22" label="22">
+        <attvalues>
+          <attvalue for="groundtruth" value="1"></attvalue>
+          <attvalue for="clusteringresult" value="1"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-134.70547" y="251.99248"></viz:position>
+      </node>
+      <node id="23" label="23">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="149.896" y="-244.96938"></viz:position>
+      </node>
+      <node id="24" label="24">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-294.0254" y="-34.12429"></viz:position>
+      </node>
+      <node id="25" label="25">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-24.769957" y="437.99582"></viz:position>
+      </node>
+      <node id="26" label="26">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="1.0987257" y="-351.91898"></viz:position>
+      </node>
+      <node id="27" label="27">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-446.2177" y="-438.72443"></viz:position>
+      </node>
+      <node id="28" label="28">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-176.32129" y="334.5275"></viz:position>
+      </node>
+      <node id="29" label="29">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="291.2434" y="49.325172"></viz:position>
+      </node>
+      <node id="30" label="30">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="507.62323" y="-2.5804362"></viz:position>
+      </node>
+      <node id="31" label="31">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-325.38507" y="10.479195"></viz:position>
+      </node>
+      <node id="32" label="32">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="1, 2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-99.73361" y="-278.27487"></viz:position>
+      </node>
+      <node id="33" label="33">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="274.05182" y="-165.20946"></viz:position>
+      </node>
+      <node id="34" label="34">
+        <attvalues>
+          <attvalue for="groundtruth" value="2"></attvalue>
+          <attvalue for="clusteringresult" value="2"></attvalue>
+        </attvalues>
+        <viz:size value="10.0"></viz:size>
+        <viz:position x="-210.07669" y="328.3254"></viz:position>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="2" target="1"></edge>
+      <edge id="1" source="3" target="1"></edge>
+      <edge id="2" source="3" target="2"></edge>
+      <edge id="3" source="4" target="1"></edge>
+      <edge id="4" source="4" target="2"></edge>
+      <edge id="5" source="4" target="3"></edge>
+      <edge id="6" source="5" target="1"></edge>
+      <edge id="7" source="6" target="1"></edge>
+      <edge id="8" source="7" target="1"></edge>
+      <edge id="9" source="7" target="5"></edge>
+      <edge id="10" source="7" target="6"></edge>
+      <edge id="11" source="8" target="1"></edge>
+      <edge id="12" source="8" target="2"></edge>
+      <edge id="13" source="8" target="3"></edge>
+      <edge id="14" source="8" target="4"></edge>
+      <edge id="15" source="9" target="1"></edge>
+      <edge id="16" source="9" target="3"></edge>
+      <edge id="17" source="10" target="3"></edge>
+      <edge id="18" source="11" target="1"></edge>
+      <edge id="19" source="11" target="5"></edge>
+      <edge id="20" source="11" target="6"></edge>
+      <edge id="21" source="12" target="1"></edge>
+      <edge id="22" source="13" target="1"></edge>
+      <edge id="23" source="13" target="4"></edge>
+      <edge id="24" source="14" target="1"></edge>
+      <edge id="25" source="14" target="2"></edge>
+      <edge id="26" source="14" target="3"></edge>
+      <edge id="27" source="14" target="4"></edge>
+      <edge id="28" source="17" target="6"></edge>
+      <edge id="29" source="17" target="7"></edge>
+      <edge id="30" source="18" target="1"></edge>
+      <edge id="31" source="18" target="2"></edge>
+      <edge id="32" source="20" target="1"></edge>
+      <edge id="33" source="20" target="2"></edge>
+      <edge id="34" source="22" target="1"></edge>
+      <edge id="35" source="22" target="2"></edge>
+      <edge id="36" source="26" target="24"></edge>
+      <edge id="37" source="26" target="25"></edge>
+      <edge id="38" source="28" target="3"></edge>
+      <edge id="39" source="28" target="24"></edge>
+      <edge id="40" source="28" target="25"></edge>
+      <edge id="41" source="29" target="3"></edge>
+      <edge id="42" source="30" target="24"></edge>
+      <edge id="43" source="30" target="27"></edge>
+      <edge id="44" source="31" target="2"></edge>
+      <edge id="45" source="31" target="9"></edge>
+      <edge id="46" source="32" target="1"></edge>
+      <edge id="47" source="32" target="25"></edge>
+      <edge id="48" source="32" target="26"></edge>
+      <edge id="49" source="32" target="29"></edge>
+      <edge id="50" source="33" target="3"></edge>
+      <edge id="51" source="33" target="9"></edge>
+      <edge id="52" source="33" target="15"></edge>
+      <edge id="53" source="33" target="16"></edge>
+      <edge id="54" source="33" target="19"></edge>
+      <edge id="55" source="33" target="21"></edge>
+      <edge id="56" source="33" target="23"></edge>
+      <edge id="57" source="33" target="24"></edge>
+      <edge id="58" source="33" target="30"></edge>
+      <edge id="59" source="33" target="31"></edge>
+      <edge id="60" source="33" target="32"></edge>
+      <edge id="61" source="34" target="9"></edge>
+      <edge id="62" source="34" target="10"></edge>
+      <edge id="63" source="34" target="14"></edge>
+      <edge id="64" source="34" target="15"></edge>
+      <edge id="65" source="34" target="16"></edge>
+      <edge id="66" source="34" target="19"></edge>
+      <edge id="67" source="34" target="20"></edge>
+      <edge id="68" source="34" target="21"></edge>
+      <edge id="69" source="34" target="23"></edge>
+      <edge id="70" source="34" target="24"></edge>
+      <edge id="71" source="34" target="27"></edge>
+      <edge id="72" source="34" target="28"></edge>
+      <edge id="73" source="34" target="29"></edge>
+      <edge id="74" source="34" target="30"></edge>
+      <edge id="75" source="34" target="31"></edge>
+      <edge id="76" source="34" target="32"></edge>
+      <edge id="77" source="34" target="33"></edge>
+    </edges>
+  </graph>
+</gexf>
