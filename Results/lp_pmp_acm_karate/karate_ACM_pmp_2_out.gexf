@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
-  <meta lastmodifieddate="2018-08-27">
+  <meta lastmodifieddate="2018-09-27">
     <creator>Gephi 0.8.1</creator>
     <description></description>
   </meta>
@@ -14,7 +14,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="275.951" y="230.1219" z="0.0"></viz:position>
+        <viz:position x="23.469816" y="-400.17932" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="2.0" label="2.0">
@@ -22,7 +22,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="95.81442" y="-576.41907" z="0.0"></viz:position>
+        <viz:position x="-213.5504" y="-389.41232" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="3.0" label="3.0">
@@ -30,7 +30,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="394.226" y="-163.83775" z="0.0"></viz:position>
+        <viz:position x="453.0133" y="391.4959" z="0.0"></viz:position>
         <viz:color r="230" g="15" b="26"></viz:color>
       </node>
       <node id="4.0" label="4.0">
@@ -38,7 +38,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-216.42801" y="40.30513" z="0.0"></viz:position>
+        <viz:position x="348.7785" y="-109.98787" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="5.0" label="5.0">
@@ -46,7 +46,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="133.93317" y="-25.847946" z="0.0"></viz:position>
+        <viz:position x="0.043821" y="-282.27698" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="6.0" label="6.0">
@@ -54,7 +54,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="573.30426" y="304.8565" z="0.0"></viz:position>
+        <viz:position x="93.80554" y="-49.021744" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="7.0" label="7.0">
@@ -62,7 +62,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="529.57196" y="47.977005" z="0.0"></viz:position>
+        <viz:position x="-279.66388" y="179.21107" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="8.0" label="8.0">
@@ -70,7 +70,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-40.02588" y="293.75934" z="0.0"></viz:position>
+        <viz:position x="-353.3083" y="-302.08844" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="9.0" label="9.0">
@@ -78,7 +78,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-342.87012" y="-37.85649" z="0.0"></viz:position>
+        <viz:position x="-443.54483" y="-63.70137" z="0.0"></viz:position>
         <viz:color r="102" g="92" b="153"></viz:color>
       </node>
       <node id="10.0" label="10.0">
@@ -86,7 +86,7 @@
           <attvalue for="Clusters" value="1, 2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-175.05319" y="250.0801" z="0.0"></viz:position>
+        <viz:position x="-268.70926" y="33.97606" z="0.0"></viz:position>
         <viz:color r="128" g="77" b="128"></viz:color>
       </node>
       <node id="11.0" label="11.0">
@@ -94,7 +94,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-121.708984" y="375.526" z="0.0"></viz:position>
+        <viz:position x="243.6889" y="-43.232285" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="12.0" label="12.0">
@@ -102,7 +102,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-389.1235" y="93.75368" z="0.0"></viz:position>
+        <viz:position x="30.925688" y="-231.8575" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="13.0" label="13.0">
@@ -110,7 +110,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-201.84961" y="-552.0747" z="0.0"></viz:position>
+        <viz:position x="84.2027" y="75.9178" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="14.0" label="14.0">
@@ -118,7 +118,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-164.09259" y="204.94801" z="0.0"></viz:position>
+        <viz:position x="-276.2614" y="259.15417" z="0.0"></viz:position>
         <viz:color r="204" g="31" b="51"></viz:color>
       </node>
       <node id="15.0" label="15.0">
@@ -126,7 +126,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-131.04004" y="260.25287" z="0.0"></viz:position>
+        <viz:position x="-447.05188" y="-319.66724" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="16.0" label="16.0">
@@ -134,7 +134,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-176.43738" y="15.287003" z="0.0"></viz:position>
+        <viz:position x="158.58575" y="-385.83063" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="17.0" label="17.0">
@@ -142,7 +142,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-63.310852" y="-163.77028" z="0.0"></viz:position>
+        <viz:position x="117.802124" y="316.02966" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="18.0" label="18.0">
@@ -150,7 +150,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="467.07678" y="391.94775" z="0.0"></viz:position>
+        <viz:position x="9.522062" y="327.2434" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="19.0" label="19.0">
@@ -158,7 +158,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-202.30823" y="96.80611" z="0.0"></viz:position>
+        <viz:position x="231.6084" y="417.1875" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="20.0" label="20.0">
@@ -166,7 +166,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-304.43848" y="406.09326" z="0.0"></viz:position>
+        <viz:position x="-224.76181" y="216.4452" z="0.0"></viz:position>
         <viz:color r="170" g="51" b="85"></viz:color>
       </node>
       <node id="21.0" label="21.0">
@@ -174,7 +174,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="9.527802" y="138.08015" z="0.0"></viz:position>
+        <viz:position x="185.23969" y="-346.58893" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="22.0" label="22.0">
@@ -182,7 +182,7 @@
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="64.27533" y="-160.20268" z="0.0"></viz:position>
+        <viz:position x="-325.61615" y="398.28632" z="0.0"></viz:position>
         <viz:color r="255" g="0" b="0"></viz:color>
       </node>
       <node id="23.0" label="23.0">
@@ -190,7 +190,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-217.0025" y="-60.687363" z="0.0"></viz:position>
+        <viz:position x="398.492" y="101.49263" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="24.0" label="24.0">
@@ -198,7 +198,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="552.4028" y="-295.43713" z="0.0"></viz:position>
+        <viz:position x="-171.46817" y="-175.72658" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="25.0" label="25.0">
@@ -206,7 +206,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-228.2981" y="-20.29271" z="0.0"></viz:position>
+        <viz:position x="-230.42963" y="561.89294" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="26.0" label="26.0">
@@ -214,7 +214,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="219.12964" y="119.73183" z="0.0"></viz:position>
+        <viz:position x="121.60718" y="-403.22284" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="27.0" label="27.0">
@@ -222,7 +222,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-29.046997" y="270.9439" z="0.0"></viz:position>
+        <viz:position x="-95.881256" y="-139.32942" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="28.0" label="28.0">
@@ -230,7 +230,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-157.56494" y="130.52785" z="0.0"></viz:position>
+        <viz:position x="277.92578" y="-119.95485" z="0.0"></viz:position>
         <viz:color r="64" g="115" b="191"></viz:color>
       </node>
       <node id="29.0" label="29.0">
@@ -238,7 +238,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-260.3868" y="-2.97612" z="0.0"></viz:position>
+        <viz:position x="401.19257" y="-95.65541" z="0.0"></viz:position>
         <viz:color r="85" g="102" b="170"></viz:color>
       </node>
       <node id="30.0" label="30.0">
@@ -246,7 +246,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="44.902924" y="-566.82965" z="0.0"></viz:position>
+        <viz:position x="510.5583" y="-272.93317" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="31.0" label="31.0">
@@ -254,7 +254,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="166.4524" y="293.80725" z="0.0"></viz:position>
+        <viz:position x="-113.731476" y="-411.81265" z="0.0"></viz:position>
         <viz:color r="64" g="115" b="191"></viz:color>
       </node>
       <node id="32.0" label="32.0">
@@ -262,7 +262,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-303.01135" y="-481.5572" z="0.0"></viz:position>
+        <viz:position x="-442.44574" y="554.1332" z="0.0"></viz:position>
         <viz:color r="43" g="128" b="213"></viz:color>
       </node>
       <node id="33.0" label="33.0">
@@ -270,7 +270,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="-383.13098" y="-302.30988" z="0.0"></viz:position>
+        <viz:position x="150.33038" y="397.6975" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
       <node id="34.0" label="34.0">
@@ -278,7 +278,7 @@
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="10.0"></viz:size>
-        <viz:position x="580.56006" y="-554.70685" z="0.0"></viz:position>
+        <viz:position x="45.63174" y="312.31592" z="0.0"></viz:position>
         <viz:color r="0" g="153" b="255"></viz:color>
       </node>
     </nodes>
