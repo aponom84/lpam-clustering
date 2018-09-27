@@ -1766,14 +1766,6 @@ graph
   ]
   edge
   [
-    id 90
-    source 23
-    target 46
-    value 1.0
-    fill "#000000"
-  ]
-  edge
-  [
     id 91
     source 23
     target 49
