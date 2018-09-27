@@ -184,7 +184,6 @@ public class PMPClustering {
 
             System.out.println("Distance map between edges has been calculated. \n");
             try {
-
                 FileOutputStream fileOut = new FileOutputStream(clusterEdgesFile);
                 ObjectOutputStream out = new ObjectOutputStream(fileOut);
                 out.writeObject(cluster_edges);
@@ -254,10 +253,15 @@ public class PMPClustering {
         HashMap<Integer/*Cluster id*/, Set<Integer>/*Nodes*/> format_clusters = new HashMap<>();
 
         for (Integer nodeId : node_clusters.keySet()) {
-            if (graph.getNode(String.valueOf(nodeId) + ".0" ) != null)
-                graph.getNode(String.valueOf(nodeId) + ".0" ).getNodeData().getAttributes().setValue("Clusters","");
+            String nodeIdString  = null;
+            if (graph.getNode(String.valueOf(nodeId) ) != null)
+                nodeIdString = String.valueOf(nodeId);
+            else if (graph.getNode(String.valueOf(nodeId) + ".0") != null)
+                nodeIdString = String.valueOf(nodeId) + ".0";
             else
                 throw new Error("Can not find node with id: " + nodeId);
+
+            graph.getNode(nodeIdString ).getNodeData().getAttributes().setValue("Clusters","");
 
             if (node_clusters.get(nodeId).size() > 0) {
                 double sum = 0;
@@ -274,8 +278,8 @@ public class PMPClustering {
                     if (belonging >= threshold) {
                         format_clusters.computeIfAbsent(clusterId,  kk -> new TreeSet<>());
                         format_clusters.get(clusterId).add(nodeId);
-                        String oldValue = (String) graph.getNode(String.valueOf(nodeId) + ".0" ).getNodeData().getAttributes().getValue("Clusters");
-                        graph.getNode(String.valueOf(nodeId) + ".0").getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
+                        String oldValue = (String) graph.getNode(nodeIdString ).getNodeData().getAttributes().getValue("Clusters");
+                        graph.getNode(nodeIdString).getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
 
                     }
                 }
