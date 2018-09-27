@@ -254,7 +254,10 @@ public class PMPClustering {
         HashMap<Integer/*Cluster id*/, Set<Integer>/*Nodes*/> format_clusters = new HashMap<>();
 
         for (Integer nodeId : node_clusters.keySet()) {
-            graph.getNode(String.valueOf(nodeId) ).getNodeData().getAttributes().setValue("Clusters","");
+            if (graph.getNode(String.valueOf(nodeId) + ".0" ) != null)
+                graph.getNode(String.valueOf(nodeId) + ".0" ).getNodeData().getAttributes().setValue("Clusters","");
+            else
+                throw new Error("Can not find node with id: " + nodeId);
 
             if (node_clusters.get(nodeId).size() > 0) {
                 double sum = 0;
@@ -271,8 +274,8 @@ public class PMPClustering {
                     if (belonging >= threshold) {
                         format_clusters.computeIfAbsent(clusterId,  kk -> new TreeSet<>());
                         format_clusters.get(clusterId).add(nodeId);
-                        String oldValue = (String) graph.getNode(String.valueOf(nodeId) ).getNodeData().getAttributes().getValue("Clusters");
-                        graph.getNode(String.valueOf(nodeId) ).getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
+                        String oldValue = (String) graph.getNode(String.valueOf(nodeId) + ".0" ).getNodeData().getAttributes().getValue("Clusters");
+                        graph.getNode(String.valueOf(nodeId) + ".0").getNodeData().getAttributes().setValue("Clusters",oldValue != "" ? oldValue + ", " + clusterId.toString(): clusterId.toString());
 
                     }
                 }
@@ -337,7 +340,7 @@ public class PMPClustering {
             graph.getEdges().forEach(edge -> {
                 Node newNode = resultLineGraphModel.factory().newNode(String.valueOf(edge.getId()));
                 //покарасить в цвет изначального ребра...
-                newNode.getNodeData().setLabel( edge.getEdgeData().getAttributes().getValue("ClusterNumb").toString());
+               // newNode.getNodeData().setLabel( edge.getEdgeData().getAttributes().getValue("ClusterNumb").toString());
 
                 float rr = edge.getEdgeData().r();
                 float gg = edge.getEdgeData().g();
@@ -377,13 +380,13 @@ public class PMPClustering {
 
             System.out.println("The line graph has been prepared successfully!");
 
-        } else {
-            try {
-                ec.exportFile(new File(outputDir, String.format("%s_out.gexf", suffix) ) , exporter);
-            } catch (IOException ex) {
-                throw new Error(ex);
-            }
+        }
 
+        try {
+            exporter = (GraphExporter) ec.getExporter("gexf");
+            ec.exportFile(new File(outputDir, String.format("%s_out.gexf", suffix) ) , exporter);
+        } catch (IOException ex) {
+            throw new Error(ex);
         }
 
         System.out.println("The work has been done successfully!");
