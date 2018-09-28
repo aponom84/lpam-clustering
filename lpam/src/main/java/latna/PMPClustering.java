@@ -20,6 +20,8 @@ import org.gephi.project.api.Workspace;
 import org.openide.util.Lookup;
 import org.gephi.graph.api.Node;
 
+import static latna.Utils.getNode;
+
 public class PMPClustering {
     public static UndirectedGraph readFromBenchmarkFile(String fileName, GraphModel graphModel)
     {
@@ -557,7 +559,7 @@ public class PMPClustering {
                 String[] tokens = line.split("\\s");
                 for (String token: tokens) {
                     int nodeId = Integer.parseInt(token);
-                    if (graph.getNode(String.valueOf(nodeId))  != null) {
+                    if (getNode(graph, nodeId) != null) {
                         String oldValue = (String) graph.getNode(String.valueOf(nodeId)) .getNodeData().getAttributes().getValue("GroundTruth");
                         graph.getNode(String.valueOf(nodeId)).getNodeData().getAttributes().setValue(
                                 "GroundTruth",(oldValue != null) && (oldValue != "") ? oldValue + ", " + String.valueOf(clusterNumber): String.valueOf(clusterNumber)

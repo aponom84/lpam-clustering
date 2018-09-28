@@ -85,4 +85,15 @@ public class Utils {
         return a;
     }
 
+    public static Node getNode(Graph graph, int nodeId) {
+        Node node = null;
+        node = graph.getNode(String.valueOf(nodeId));
+        if (node == null) {
+            node = graph.getNode(String.valueOf(nodeId)+ ".0");
+            if (node == null)
+                throw new Error("Can not find node with id: " + String.valueOf(nodeId));
+        }
+        return node;
+    }
+
 }
