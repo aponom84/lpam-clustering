@@ -560,8 +560,8 @@ public class PMPClustering {
                 for (String token: tokens) {
                     int nodeId = Integer.parseInt(token);
                     if (getNode(graph, nodeId) != null) {
-                        String oldValue = (String) graph.getNode(String.valueOf(nodeId)) .getNodeData().getAttributes().getValue("GroundTruth");
-                        graph.getNode(String.valueOf(nodeId)).getNodeData().getAttributes().setValue(
+                        String oldValue = (String) getNode(graph, nodeId) .getNodeData().getAttributes().getValue("GroundTruth");
+                        getNode(graph, nodeId) .getNodeData().getAttributes().setValue(
                                 "GroundTruth",(oldValue != null) && (oldValue != "") ? oldValue + ", " + String.valueOf(clusterNumber): String.valueOf(clusterNumber)
                         ) ;
                     }
