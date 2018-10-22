@@ -5,8 +5,7 @@
 This and java implementation of the method for finding overlapping communities  in network.
 Below you can find an example of method output for "School friendship" dataset.
 
-![school friendship](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/school-2_ACM_pmp_7_out.png)
-
+![school friendship](final_pictures/school-2_ACM_pmp_7_out.png)
 
 
 ## Project Structure ##
@@ -39,6 +38,6 @@ To find exact solution for k-medois the installation of [lp_solver](http://lpsol
 
 ## More Output Examples ##
 ### Karate Club ###
-![Karate Club](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/karate_ACM_kmd_2_out.png)
+![Karate Club](final_pictures/karate_ACM_kmd_2_out.png)
 ### American Football Club ###
-![American Fooball Club](https://github.com/aponom84/lpam-clustering/blob/master/final_pictures/footballTSEinput_CM_kmd_12_out.png)
+![American Fooball Club](final_pictures/footballTSEinput_CM_kmd_12_out.png)
