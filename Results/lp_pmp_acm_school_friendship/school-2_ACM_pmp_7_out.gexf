@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.2draft" version="1.2" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd">
-  <meta lastmodifieddate="2018-09-27">
+  <meta lastmodifieddate="2018-10-04">
     <creator>Gephi 0.8.1</creator>
     <description></description>
   </meta>
   <graph defaultedgetype="undirected" mode="static">
     <attributes class="node" mode="static">
+      <attribute id="GroundTruth" title="GroundTruth" type="string"></attribute>
       <attribute id="Clusters" title="Clusters" type="string"></attribute>
     </attributes>
     <attributes class="edge" mode="static">
@@ -13,13 +14,16 @@
     </attributes>
     <nodes>
       <node id="0.0" label="0">
-        <attvalues></attvalues>
+        <attvalues>
+          <attvalue for="GroundTruth" value="1"></attvalue>
+        </attvalues>
         <viz:size value="4.0"></viz:size>
         <viz:position x="-62.148872" y="-21.555912" z="0.0"></viz:position>
         <viz:color r="255" g="102" b="85"></viz:color>
       </node>
       <node id="1.0" label="1">
         <attvalues>
+          <attvalue for="GroundTruth" value="1"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -28,6 +32,7 @@
       </node>
       <node id="2.0" label="2">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -36,6 +41,7 @@
       </node>
       <node id="3.0" label="3">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -44,6 +50,7 @@
       </node>
       <node id="4.0" label="4">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -52,6 +59,7 @@
       </node>
       <node id="5.0" label="5">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -60,6 +68,7 @@
       </node>
       <node id="6.0" label="6">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -68,6 +77,7 @@
       </node>
       <node id="7.0" label="7">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -76,6 +86,7 @@
       </node>
       <node id="8.0" label="8">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -84,6 +95,7 @@
       </node>
       <node id="9.0" label="9">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -92,6 +104,7 @@
       </node>
       <node id="10.0" label="10">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -100,6 +113,7 @@
       </node>
       <node id="11.0" label="11">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -108,6 +122,7 @@
       </node>
       <node id="12.0" label="12">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -116,6 +131,7 @@
       </node>
       <node id="13.0" label="13">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value=""></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -124,6 +140,7 @@
       </node>
       <node id="14.0" label="14">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="3"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -132,6 +149,7 @@
       </node>
       <node id="15.0" label="15">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -140,6 +158,7 @@
       </node>
       <node id="16.0" label="16">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -148,6 +167,7 @@
       </node>
       <node id="17.0" label="17">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="3"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -156,6 +176,7 @@
       </node>
       <node id="18.0" label="18">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="3"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -164,6 +185,7 @@
       </node>
       <node id="19.0" label="19">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value=""></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -172,6 +194,7 @@
       </node>
       <node id="20.0" label="20">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="3"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -180,6 +203,7 @@
       </node>
       <node id="21.0" label="21">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -188,6 +212,7 @@
       </node>
       <node id="22.0" label="22">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -196,6 +221,7 @@
       </node>
       <node id="23.0" label="23">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -204,6 +230,7 @@
       </node>
       <node id="24.0" label="24">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -212,6 +239,7 @@
       </node>
       <node id="25.0" label="25">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -220,6 +248,7 @@
       </node>
       <node id="26.0" label="26">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -228,6 +257,7 @@
       </node>
       <node id="27.0" label="27">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -236,6 +266,7 @@
       </node>
       <node id="28.0" label="28">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -244,6 +275,7 @@
       </node>
       <node id="29.0" label="29">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -252,6 +284,7 @@
       </node>
       <node id="30.0" label="30">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -260,6 +293,7 @@
       </node>
       <node id="31.0" label="31">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -268,6 +302,7 @@
       </node>
       <node id="32.0" label="32">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value=""></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -276,6 +311,7 @@
       </node>
       <node id="33.0" label="33">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -284,6 +320,7 @@
       </node>
       <node id="34.0" label="34">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -292,6 +329,7 @@
       </node>
       <node id="35.0" label="35">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -300,6 +338,7 @@
       </node>
       <node id="36.0" label="36">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -308,6 +347,7 @@
       </node>
       <node id="37.0" label="37">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -316,6 +356,7 @@
       </node>
       <node id="38.0" label="38">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -324,6 +365,7 @@
       </node>
       <node id="39.0" label="39">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -332,6 +374,7 @@
       </node>
       <node id="40.0" label="40">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -340,6 +383,7 @@
       </node>
       <node id="41.0" label="41">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -348,6 +392,7 @@
       </node>
       <node id="42.0" label="42">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -356,6 +401,7 @@
       </node>
       <node id="43.0" label="43">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value=""></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -364,6 +410,7 @@
       </node>
       <node id="44.0" label="44">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -372,6 +419,7 @@
       </node>
       <node id="45.0" label="45">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -380,6 +428,7 @@
       </node>
       <node id="46.0" label="46">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -388,6 +437,7 @@
       </node>
       <node id="47.0" label="47">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -396,6 +446,7 @@
       </node>
       <node id="48.0" label="48">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -404,6 +455,7 @@
       </node>
       <node id="49.0" label="49">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -412,6 +464,7 @@
       </node>
       <node id="50.0" label="50">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -420,6 +473,7 @@
       </node>
       <node id="51.0" label="51">
         <attvalues>
+          <attvalue for="GroundTruth" value="5"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -428,6 +482,7 @@
       </node>
       <node id="52.0" label="52">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="7"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -436,6 +491,7 @@
       </node>
       <node id="53.0" label="53">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -444,6 +500,7 @@
       </node>
       <node id="54.0" label="54">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -452,6 +509,7 @@
       </node>
       <node id="55.0" label="55">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -460,6 +518,7 @@
       </node>
       <node id="56.0" label="56">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -468,6 +527,7 @@
       </node>
       <node id="57.0" label="57">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -476,6 +536,7 @@
       </node>
       <node id="58.0" label="58">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="6"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -484,6 +545,7 @@
       </node>
       <node id="59.0" label="59">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value=""></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -492,6 +554,7 @@
       </node>
       <node id="60.0" label="60">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -500,6 +563,7 @@
       </node>
       <node id="61.0" label="61">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -508,6 +572,7 @@
       </node>
       <node id="62.0" label="62">
         <attvalues>
+          <attvalue for="GroundTruth" value="4"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -516,6 +581,7 @@
       </node>
       <node id="63.0" label="63">
         <attvalues>
+          <attvalue for="GroundTruth" value="2"></attvalue>
           <attvalue for="Clusters" value="4"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -524,6 +590,7 @@
       </node>
       <node id="64.0" label="64">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -532,6 +599,7 @@
       </node>
       <node id="65.0" label="65">
         <attvalues>
+          <attvalue for="GroundTruth" value="3"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -540,6 +608,7 @@
       </node>
       <node id="66.0" label="66">
         <attvalues>
+          <attvalue for="GroundTruth" value="6"></attvalue>
           <attvalue for="Clusters" value="5"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -548,6 +617,7 @@
       </node>
       <node id="67.0" label="67">
         <attvalues>
+          <attvalue for="GroundTruth" value="1"></attvalue>
           <attvalue for="Clusters" value="2"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
@@ -556,6 +626,7 @@
       </node>
       <node id="68.0" label="68">
         <attvalues>
+          <attvalue for="GroundTruth" value="1"></attvalue>
           <attvalue for="Clusters" value="1"></attvalue>
         </attvalues>
         <viz:size value="4.0"></viz:size>
