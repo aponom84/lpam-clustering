@@ -1,0 +1,51 @@
+,graph,statistic,value
+0,bench_30,$|V|$,30.0
+1,bench_30,$|E|$,60.0
+2,bench_30,$\hat{k}$,3.0
+3,bench_30,$\hat{o}$,2.0
+4,bench_30,$\hat{c}$,0.419021164021164
+5,bench_30,\shortstack[l]{normalized \\ cut},0.19445269690367728
+6,bench_30,\shortstack[l]{internal \\ edge \\density},0.0949074074074074
+7,bench_30,significance,85.31311213928058
+8,bench_30,\shortstack[l]{avarage \\ internal \\degree},3.2944444444444443
+9,bench_30,\shortstack[l]{modularity \\ density},0.8564583333333333
+10,bench_40,$|V|$,40.0
+11,bench_40,$|E|$,110.0
+12,bench_40,$\hat{k}$,3.0
+13,bench_40,$\hat{o}$,5.0
+14,bench_40,$\hat{c}$,0.41555149099266747
+15,bench_40,\shortstack[l]{normalized \\ cut},0.3703995642687689
+16,bench_40,\shortstack[l]{internal \\ edge \\density},0.0817270448849396
+17,bench_40,significance,211.29376100269164
+18,bench_40,\shortstack[l]{avarage \\ internal \\degree},4.415948963317384
+19,bench_40,\shortstack[l]{modularity \\ density},0.5931339585733945
+20,bench_50,$|V|$,50.0
+21,bench_50,$|E|$,141.0
+22,bench_50,$\hat{k}$,4.0
+23,bench_50,$\hat{o}$,4.0
+24,bench_50,$\hat{c}$,0.3961357964361061
+25,bench_50,\shortstack[l]{normalized \\ cut},0.2656701056536736
+26,bench_50,\shortstack[l]{internal \\ edge \\density},0.11164021164021162
+27,bench_50,significance,301.31247091112914
+28,bench_50,\shortstack[l]{avarage \\ internal \\degree},4.357142857142858
+29,bench_50,\shortstack[l]{modularity \\ density},1.1528293135435992
+30,"bench_60,",$|V|$,60.0
+31,"bench_60,",$|E|$,130.0
+32,"bench_60,",$\hat{k}$,6.0
+33,"bench_60,",$\hat{o}$,4.0
+34,"bench_60,",$\hat{c}$,0.5765210787602092
+35,"bench_60,",\shortstack[l]{normalized \\ cut},0.2856957402570514
+36,"bench_60,",\shortstack[l]{internal \\ edge \\density},0.09117737769053559
+37,"bench_60,",significance,273.259342433544
+38,"bench_60,",\shortstack[l]{avarage \\ internal \\degree},3.216498316498317
+39,"bench_60,",\shortstack[l]{modularity \\ density},1.270153993032781
+40,bench_60_dense,$|V|$,60.0
+41,bench_60_dense,$|E|$,131.0
+42,bench_60_dense,$\hat{k}$,6.0
+43,bench_60_dense,$\hat{o}$,5.0
+44,bench_60_dense,$\hat{c}$,0.3127439217702376
+45,bench_60_dense,\shortstack[l]{normalized \\ cut},0.3795253000384138
+46,bench_60_dense,\shortstack[l]{internal \\ edge \\density},0.07393269498532656
+47,bench_60_dense,significance,187.35875647646964
+48,bench_60_dense,\shortstack[l]{avarage \\ internal \\degree},2.5476190476190474
+49,bench_60_dense,\shortstack[l]{modularity \\ density},0.7938682745825604

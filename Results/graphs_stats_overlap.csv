@@ -1,0 +1,821 @@
+,graph,statistic,value
+0,school,$|V|$,69.0
+1,school,$|E|$,194.0
+2,school,$\hat{k}$,6.0
+3,school,$\hat{o}$,2.0
+4,school,$\hat{c}$,0.48286069807808935
+5,school,\shortstack[l]{normalized \\ cut},0.28044039949116045
+6,school,\shortstack[l]{internal \\ edge \\density},0.1047787452199217
+7,school,significance,464.3310123216511
+8,school,\shortstack[l]{avarage \\ internal \\degree},4.281766381766381
+9,school,\shortstack[l]{modularity \\ density},1.3517914018555044
+10,karate,$|V|$,34.0
+11,karate,$|E|$,78.0
+12,karate,$\hat{k}$,2.0
+13,karate,$\hat{o}$,0.0
+14,karate,$\hat{c}$,0.5706384782076824
+15,karate,\shortstack[l]{normalized \\ cut},0.23037280701754387
+16,karate,\shortstack[l]{internal \\ edge \\density},0.06296977124183006
+17,karate,significance,100.78052119656817
+18,karate,\shortstack[l]{avarage \\ internal \\degree},4.006944444444445
+19,karate,\shortstack[l]{modularity \\ density},0.4039351851851851
+20,adj,$|V|$,112.0
+21,adj,$|E|$,425.0
+22,adj,$\hat{k}$,2.0
+23,adj,$\hat{o}$,0.0
+24,adj,$\hat{c}$,0.1728400798103679
+25,adj,\shortstack[l]{normalized \\ cut},1.0502941360427083
+26,adj,\shortstack[l]{internal \\ edge \\density},0.009174761344915097
+27,adj,significance,179.84345776467052
+28,adj,\shortstack[l]{avarage \\ internal \\degree},2.07088122605364
+29,adj,\shortstack[l]{modularity \\ density},-0.12378219149258916
+30,foolball,$|V|$,115.0
+31,foolball,$|E|$,613.0
+32,foolball,$\hat{k}$,11.0
+33,foolball,$\hat{o}$,8.0
+34,foolball,$\hat{c}$,0.40321601104209814
+35,foolball,\shortstack[l]{normalized \\ cut},0.4831405800998908
+36,foolball,\shortstack[l]{internal \\ edge \\density},0.0907810627624869
+37,foolball,significance,2148.9841688044685
+38,foolball,\shortstack[l]{avarage \\ internal \\degree},5.792233145251722
+39,foolball,\shortstack[l]{modularity \\ density},0.9825308666962824
+40,poolbooks,$|V|$,105.0
+41,poolbooks,$|E|$,441.0
+42,poolbooks,$\hat{k}$,3.0
+43,poolbooks,$\hat{o}$,0.0
+44,poolbooks,$\hat{c}$,0.4875267912317314
+45,poolbooks,\shortstack[l]{normalized \\ cut},0.40764363941317255
+46,poolbooks,\shortstack[l]{internal \\ edge \\density},0.0392102629614193
+47,poolbooks,significance,992.9398824055262
+48,poolbooks,\shortstack[l]{avarage \\ internal \\degree},5.653027823240588
+49,poolbooks,\shortstack[l]{modularity \\ density},0.0647928082121553
+50,lattice8x8,$|V|$,64.0
+51,lattice8x8,$|E|$,112.0
+52,lattice8x8,$\hat{k}$,4.0
+53,lattice8x8,$\hat{o}$,0.0
+54,lattice8x8,$\hat{c}$,0.0
+55,lattice8x8,\shortstack[l]{normalized \\ cut},0.18633540372670807
+56,lattice8x8,\shortstack[l]{internal \\ edge \\density},0.05
+57,lattice8x8,significance,152.36161722184428
+58,lattice8x8,\shortstack[l]{avarage \\ internal \\degree},3.0
+59,lattice8x8,\shortstack[l]{modularity \\ density},0.625
+60,bench_0.10,$|V|$,200.0
+61,bench_0.10,$|E|$,1525.0
+62,bench_0.10,$\hat{k}$,200.0
+63,bench_0.10,$\hat{o}$,11.0
+64,bench_0.10,$\hat{c}$,0.5967578093961354
+65,bench_0.10,\shortstack[l]{normalized \\ cut},1.0025177630247237
+66,bench_0.10,\shortstack[l]{internal \\ edge \\density},0.0
+67,bench_0.10,significance,
+68,bench_0.10,\shortstack[l]{avarage \\ internal \\degree},0.0
+69,bench_0.10,\shortstack[l]{modularity \\ density},-1330.0
+70,bench_0.15,$|V|$,200.0
+71,bench_0.15,$|E|$,1585.0
+72,bench_0.15,$\hat{k}$,200.0
+73,bench_0.15,$\hat{o}$,8.0
+74,bench_0.15,$\hat{c}$,0.4467428488912977
+75,bench_0.15,\shortstack[l]{normalized \\ cut},1.0017052986109427
+76,bench_0.15,\shortstack[l]{internal \\ edge \\density},0.00125
+77,bench_0.15,significance,
+78,bench_0.15,\shortstack[l]{avarage \\ internal \\degree},0.005
+79,bench_0.15,\shortstack[l]{modularity \\ density},-1329.0
+80,bench_0.20,$|V|$,200.0
+81,bench_0.20,$|E|$,1499.0
+82,bench_0.20,$\hat{k}$,200.0
+83,bench_0.20,$\hat{o}$,8.0
+84,bench_0.20,$\hat{c}$,0.3336959487261009
+85,bench_0.20,\shortstack[l]{normalized \\ cut},1.0018437339829251
+86,bench_0.20,\shortstack[l]{internal \\ edge \\density},0.00125
+87,bench_0.20,significance,
+88,bench_0.20,\shortstack[l]{avarage \\ internal \\degree},0.005
+89,bench_0.20,\shortstack[l]{modularity \\ density},-1329.0
+90,bench_0.25,$|V|$,200.0
+91,bench_0.25,$|E|$,1545.0
+92,bench_0.25,$\hat{k}$,200.0
+93,bench_0.25,$\hat{o}$,10.0
+94,bench_0.25,$\hat{c}$,0.3569637721063533
+95,bench_0.25,\shortstack[l]{normalized \\ cut},1.0010502927548712
+96,bench_0.25,\shortstack[l]{internal \\ edge \\density},0.0025
+97,bench_0.25,significance,
+98,bench_0.25,\shortstack[l]{avarage \\ internal \\degree},0.01
+99,bench_0.25,\shortstack[l]{modularity \\ density},-1328.0
+100,bench_0.30,$|V|$,200.0
+101,bench_0.30,$|E|$,1475.0
+102,bench_0.30,$\hat{k}$,200.0
+103,bench_0.30,$\hat{o}$,9.0
+104,bench_0.30,$\hat{c}$,0.303485596346828
+105,bench_0.30,\shortstack[l]{normalized \\ cut},1.001885240211838
+106,bench_0.30,\shortstack[l]{internal \\ edge \\density},0.00125
+107,bench_0.30,significance,
+108,bench_0.30,\shortstack[l]{avarage \\ internal \\degree},0.005
+109,bench_0.30,\shortstack[l]{modularity \\ density},-1329.0
+110,bench_0.35,$|V|$,200.0
+111,bench_0.35,$|E|$,1647.0
+112,bench_0.35,$\hat{k}$,200.0
+113,bench_0.35,$\hat{o}$,10.0
+114,bench_0.35,$\hat{c}$,0.295855529519256
+115,bench_0.35,\shortstack[l]{normalized \\ cut},1.0016144422866902
+116,bench_0.35,\shortstack[l]{internal \\ edge \\density},0.00125
+117,bench_0.35,significance,
+118,bench_0.35,\shortstack[l]{avarage \\ internal \\degree},0.005
+119,bench_0.35,\shortstack[l]{modularity \\ density},-1329.0
+120,bench_0.40,$|V|$,200.0
+121,bench_0.40,$|E|$,1611.0
+122,bench_0.40,$\hat{k}$,200.0
+123,bench_0.40,$\hat{o}$,10.0
+124,bench_0.40,$\hat{c}$,0.2374808971024781
+125,bench_0.40,\shortstack[l]{normalized \\ cut},1.0023837013223413
+126,bench_0.40,\shortstack[l]{internal \\ edge \\density},0.0
+127,bench_0.40,significance,
+128,bench_0.40,\shortstack[l]{avarage \\ internal \\degree},0.0
+129,bench_0.40,\shortstack[l]{modularity \\ density},-1330.0
+130,bench_0.45,$|V|$,200.0
+131,bench_0.45,$|E|$,1556.0
+132,bench_0.45,$\hat{k}$,200.0
+133,bench_0.45,$\hat{o}$,13.0
+134,bench_0.45,$\hat{c}$,0.24845969490813727
+135,bench_0.45,\shortstack[l]{normalized \\ cut},1.0024677348519393
+136,bench_0.45,\shortstack[l]{internal \\ edge \\density},0.0
+137,bench_0.45,significance,
+138,bench_0.45,\shortstack[l]{avarage \\ internal \\degree},0.0
+139,bench_0.45,\shortstack[l]{modularity \\ density},-1330.0
+140,bench_0.50,$|V|$,200.0
+141,bench_0.50,$|E|$,1451.0
+142,bench_0.50,$\hat{k}$,200.0
+143,bench_0.50,$\hat{o}$,10.0
+144,bench_0.50,$\hat{c}$,0.17800628548280936
+145,bench_0.50,\shortstack[l]{normalized \\ cut},1.0025721121643512
+146,bench_0.50,\shortstack[l]{internal \\ edge \\density},0.0
+147,bench_0.50,significance,
+148,bench_0.50,\shortstack[l]{avarage \\ internal \\degree},0.0
+149,bench_0.50,\shortstack[l]{modularity \\ density},-1293.0
+150,bench_0.55,$|V|$,200.0
+151,bench_0.55,$|E|$,1653.0
+152,bench_0.55,$\hat{k}$,200.0
+153,bench_0.55,$\hat{o}$,13.0
+154,bench_0.55,$\hat{c}$,0.2042997120615706
+155,bench_0.55,\shortstack[l]{normalized \\ cut},1.002323286505515
+156,bench_0.55,\shortstack[l]{internal \\ edge \\density},0.0
+157,bench_0.55,significance,
+158,bench_0.55,\shortstack[l]{avarage \\ internal \\degree},0.0
+159,bench_0.55,\shortstack[l]{modularity \\ density},-1330.0
+160,bench_0.60,$|V|$,200.0
+161,bench_0.60,$|E|$,1553.0
+162,bench_0.60,$\hat{k}$,200.0
+163,bench_0.60,$\hat{o}$,13.0
+164,bench_0.60,$\hat{c}$,0.18435620997095006
+165,bench_0.60,\shortstack[l]{normalized \\ cut},1.0024724892304393
+166,bench_0.60,\shortstack[l]{internal \\ edge \\density},0.0
+167,bench_0.60,significance,
+168,bench_0.60,\shortstack[l]{avarage \\ internal \\degree},0.0
+169,bench_0.60,\shortstack[l]{modularity \\ density},-1330.0
+170,bench_0.65,$|V|$,200.0
+171,bench_0.65,$|E|$,1524.0
+172,bench_0.65,$\hat{k}$,200.0
+173,bench_0.65,$\hat{o}$,12.0
+174,bench_0.65,$\hat{c}$,0.14889742437515371
+175,bench_0.65,\shortstack[l]{normalized \\ cut},1.0025194106309214
+176,bench_0.65,\shortstack[l]{internal \\ edge \\density},0.0
+177,bench_0.65,significance,
+178,bench_0.65,\shortstack[l]{avarage \\ internal \\degree},0.0
+179,bench_0.65,\shortstack[l]{modularity \\ density},-1330.0
+180,bench_0.70,$|V|$,200.0
+181,bench_0.70,$|E|$,1482.0
+182,bench_0.70,$\hat{k}$,200.0
+183,bench_0.70,$\hat{o}$,11.0
+184,bench_0.70,$\hat{c}$,0.13652486426693308
+185,bench_0.70,\shortstack[l]{normalized \\ cut},1.0025906123193555
+186,bench_0.70,\shortstack[l]{internal \\ edge \\density},0.0
+187,bench_0.70,significance,
+188,bench_0.70,\shortstack[l]{avarage \\ internal \\degree},0.0
+189,bench_0.70,\shortstack[l]{modularity \\ density},-1330.0
+190,bench_0.75,$|V|$,200.0
+191,bench_0.75,$|E|$,1468.0
+192,bench_0.75,$\hat{k}$,200.0
+193,bench_0.75,$\hat{o}$,10.0
+194,bench_0.75,$\hat{c}$,0.13319707861109303
+195,bench_0.75,\shortstack[l]{normalized \\ cut},1.0026152490540614
+196,bench_0.75,\shortstack[l]{internal \\ edge \\density},0.0
+197,bench_0.75,significance,
+198,bench_0.75,\shortstack[l]{avarage \\ internal \\degree},0.0
+199,bench_0.75,\shortstack[l]{modularity \\ density},-1330.0
+200,bench_0.80,$|V|$,200.0
+201,bench_0.80,$|E|$,1607.0
+202,bench_0.80,$\hat{k}$,200.0
+203,bench_0.80,$\hat{o}$,12.0
+204,bench_0.80,$\hat{c}$,0.15313651748129015
+205,bench_0.80,\shortstack[l]{normalized \\ cut},1.0016722588463938
+206,bench_0.80,\shortstack[l]{internal \\ edge \\density},0.00125
+207,bench_0.80,significance,
+208,bench_0.80,\shortstack[l]{avarage \\ internal \\degree},0.005
+209,bench_0.80,\shortstack[l]{modularity \\ density},-1329.0
+210,bench_0.85,$|V|$,200.0
+211,bench_0.85,$|E|$,1660.0
+212,bench_0.85,$\hat{k}$,200.0
+213,bench_0.85,$\hat{o}$,10.0
+214,bench_0.85,$\hat{c}$,0.15719128766203586
+215,bench_0.85,\shortstack[l]{normalized \\ cut},1.002313513852685
+216,bench_0.85,\shortstack[l]{internal \\ edge \\density},0.0
+217,bench_0.85,significance,
+218,bench_0.85,\shortstack[l]{avarage \\ internal \\degree},0.0
+219,bench_0.85,\shortstack[l]{modularity \\ density},-1330.0
+220,bench_0.90,$|V|$,200.0
+221,bench_0.90,$|E|$,1612.0
+222,bench_0.90,$\hat{k}$,200.0
+223,bench_0.90,$\hat{o}$,9.0
+224,bench_0.90,$\hat{c}$,0.15004676398783828
+225,bench_0.90,\shortstack[l]{normalized \\ cut},1.0016648752605668
+226,bench_0.90,\shortstack[l]{internal \\ edge \\density},0.00125
+227,bench_0.90,significance,
+228,bench_0.90,\shortstack[l]{avarage \\ internal \\degree},0.005
+229,bench_0.90,\shortstack[l]{modularity \\ density},-1329.0
+230,bench_0.95,$|V|$,200.0
+231,bench_0.95,$|E|$,1647.0
+232,bench_0.95,$\hat{k}$,200.0
+233,bench_0.95,$\hat{o}$,9.0
+234,bench_0.95,$\hat{c}$,0.15439857033837848
+235,bench_0.95,\shortstack[l]{normalized \\ cut},1.0023317290169296
+236,bench_0.95,\shortstack[l]{internal \\ edge \\density},0.0
+237,bench_0.95,significance,
+238,bench_0.95,\shortstack[l]{avarage \\ internal \\degree},0.0
+239,bench_0.95,\shortstack[l]{modularity \\ density},-1330.0
+240,farz_0.10,$|V|$,200.0
+241,farz_0.10,$|E|$,871.0
+242,farz_0.10,$\hat{k}$,5.0
+243,farz_0.10,$\hat{o}$,31.0
+244,farz_0.10,$\hat{c}$,0.3242000516348438
+245,farz_0.10,\shortstack[l]{normalized \\ cut},1.020562450059644
+246,farz_0.10,\shortstack[l]{internal \\ edge \\density},0.008199951308814223
+247,farz_0.10,significance,365.8109399996583
+248,farz_0.10,\shortstack[l]{avarage \\ internal \\degree},1.4181591955388146
+249,farz_0.10,\shortstack[l]{modularity \\ density},-1.5333321857940287
+250,farz_0.15,$|V|$,200.0
+251,farz_0.15,$|E|$,915.0
+252,farz_0.15,$\hat{k}$,5.0
+253,farz_0.15,$\hat{o}$,37.0
+254,farz_0.15,$\hat{c}$,0.32964240010610224
+255,farz_0.15,\shortstack[l]{normalized \\ cut},0.9825609687992477
+256,farz_0.15,\shortstack[l]{internal \\ edge \\density},0.01058672706303018
+257,farz_0.15,significance,452.78543616933473
+258,farz_0.15,\shortstack[l]{avarage \\ internal \\degree},1.8033309226888683
+259,farz_0.15,\shortstack[l]{modularity \\ density},-0.9072995629177667
+260,farz_0.20,$|V|$,200.0
+261,farz_0.20,$|E|$,939.0
+262,farz_0.20,$\hat{k}$,5.0
+263,farz_0.20,$\hat{o}$,36.0
+264,farz_0.20,$\hat{c}$,0.3252730554752926
+265,farz_0.20,\shortstack[l]{normalized \\ cut},0.9482445341937076
+266,farz_0.20,\shortstack[l]{internal \\ edge \\density},0.01184662065288269
+267,farz_0.20,significance,562.8769672519045
+268,farz_0.20,\shortstack[l]{avarage \\ internal \\degree},2.1663702524566797
+269,farz_0.20,\shortstack[l]{modularity \\ density},-0.6173461541881176
+270,farz_0.25,$|V|$,200.0
+271,farz_0.25,$|E|$,919.0
+272,farz_0.25,$\hat{k}$,5.0
+273,farz_0.25,$\hat{o}$,35.0
+274,farz_0.25,$\hat{c}$,0.3383721390367311
+275,farz_0.25,\shortstack[l]{normalized \\ cut},0.908717301609592
+276,farz_0.25,\shortstack[l]{internal \\ edge \\density},0.014776157014442159
+277,farz_0.25,significance,716.24172576254
+278,farz_0.25,\shortstack[l]{avarage \\ internal \\degree},2.566993146993147
+279,farz_0.25,\shortstack[l]{modularity \\ density},-0.6327824335491619
+280,farz_0.30,$|V|$,200.0
+281,farz_0.30,$|E|$,775.0
+282,farz_0.30,$\hat{k}$,5.0
+283,farz_0.30,$\hat{o}$,18.0
+284,farz_0.30,$\hat{c}$,0.31067079479866366
+285,farz_0.30,\shortstack[l]{normalized \\ cut},0.8822459428005928
+286,farz_0.30,\shortstack[l]{internal \\ edge \\density},0.027114368896946923
+287,farz_0.30,significance,599.6023059196158
+288,farz_0.30,\shortstack[l]{avarage \\ internal \\degree},2.1970295208426047
+289,farz_0.30,\shortstack[l]{modularity \\ density},-4.166815230993294
+290,farz_0.35,$|V|$,200.0
+291,farz_0.35,$|E|$,913.0
+292,farz_0.35,$\hat{k}$,5.0
+293,farz_0.35,$\hat{o}$,36.0
+294,farz_0.35,$\hat{c}$,0.34192053017309953
+295,farz_0.35,\shortstack[l]{normalized \\ cut},0.827002772447816
+296,farz_0.35,\shortstack[l]{internal \\ edge \\density},0.02191414774957002
+297,farz_0.35,significance,1036.8048725821454
+298,farz_0.35,\shortstack[l]{avarage \\ internal \\degree},3.2298268398268397
+299,farz_0.35,\shortstack[l]{modularity \\ density},-0.9123464725460126
+300,farz_0.40,$|V|$,200.0
+301,farz_0.40,$|E|$,877.0
+302,farz_0.40,$\hat{k}$,5.0
+303,farz_0.40,$\hat{o}$,20.0
+304,farz_0.40,$\hat{c}$,0.3074337592024452
+305,farz_0.40,\shortstack[l]{normalized \\ cut},0.8017879946414286
+306,farz_0.40,\shortstack[l]{internal \\ edge \\density},0.025775596485491603
+307,farz_0.40,significance,1026.6065465849906
+308,farz_0.40,\shortstack[l]{avarage \\ internal \\degree},3.3298628982497327
+309,farz_0.40,\shortstack[l]{modularity \\ density},-0.9082878575845554
+310,farz_0.45,$|V|$,200.0
+311,farz_0.45,$|E|$,889.0
+312,farz_0.45,$\hat{k}$,5.0
+313,farz_0.45,$\hat{o}$,24.0
+314,farz_0.45,$\hat{c}$,0.2939885021062146
+315,farz_0.45,\shortstack[l]{normalized \\ cut},0.7699830184363263
+316,farz_0.45,\shortstack[l]{internal \\ edge \\density},0.04128295767529305
+317,farz_0.45,significance,1053.1939954402978
+318,farz_0.45,\shortstack[l]{avarage \\ internal \\degree},3.3490397074793172
+319,farz_0.45,\shortstack[l]{modularity \\ density},-7.01577893014218
+320,farz_0.50,$|V|$,200.0
+321,farz_0.50,$|E|$,891.0
+322,farz_0.50,$\hat{k}$,5.0
+323,farz_0.50,$\hat{o}$,12.0
+324,farz_0.50,$\hat{c}$,0.32418156077247445
+325,farz_0.50,\shortstack[l]{normalized \\ cut},0.7324428745985857
+326,farz_0.50,\shortstack[l]{internal \\ edge \\density},0.048174642248768086
+327,farz_0.50,significance,1110.51745218975
+328,farz_0.50,\shortstack[l]{avarage \\ internal \\degree},3.9286222222222222
+329,farz_0.50,\shortstack[l]{modularity \\ density},-1.99763049382716
+330,farz_0.55,$|V|$,200.0
+331,farz_0.55,$|E|$,876.0
+332,farz_0.55,$\hat{k}$,5.0
+333,farz_0.55,$\hat{o}$,26.0
+334,farz_0.55,$\hat{c}$,0.3674053739938985
+335,farz_0.55,\shortstack[l]{normalized \\ cut},0.668568649328107
+336,farz_0.55,\shortstack[l]{internal \\ edge \\density},0.034870617610343636
+337,farz_0.55,significance,1483.0813880880276
+338,farz_0.55,\shortstack[l]{avarage \\ internal \\degree},4.185179465179465
+339,farz_0.55,\shortstack[l]{modularity \\ density},-1.1080471155717833
+340,farz_0.60,$|V|$,200.0
+341,farz_0.60,$|E|$,896.0
+342,farz_0.60,$\hat{k}$,5.0
+343,farz_0.60,$\hat{o}$,28.0
+344,farz_0.60,$\hat{c}$,0.3285632382539168
+345,farz_0.60,\shortstack[l]{normalized \\ cut},0.5937935649167756
+346,farz_0.60,\shortstack[l]{internal \\ edge \\density},0.02979393822076749
+347,farz_0.60,significance,1588.584141277446
+348,farz_0.60,\shortstack[l]{avarage \\ internal \\degree},4.698635694928377
+349,farz_0.60,\shortstack[l]{modularity \\ density},-0.025563401549396292
+350,farz_0.65,$|V|$,200.0
+351,farz_0.65,$|E|$,907.0
+352,farz_0.65,$\hat{k}$,5.0
+353,farz_0.65,$\hat{o}$,26.0
+354,farz_0.65,$\hat{c}$,0.35574198119611694
+355,farz_0.65,\shortstack[l]{normalized \\ cut},0.538306906090034
+356,farz_0.65,\shortstack[l]{internal \\ edge \\density},0.036392900841176704
+357,farz_0.65,significance,2002.2346339588448
+358,farz_0.65,\shortstack[l]{avarage \\ internal \\degree},5.43431265031265
+359,farz_0.65,\shortstack[l]{modularity \\ density},0.06140066639042111
+360,farz_0.70,$|V|$,200.0
+361,farz_0.70,$|E|$,903.0
+362,farz_0.70,$\hat{k}$,5.0
+363,farz_0.70,$\hat{o}$,32.0
+364,farz_0.70,$\hat{c}$,0.3498724929814452
+365,farz_0.70,\shortstack[l]{normalized \\ cut},0.5837855509389343
+366,farz_0.70,\shortstack[l]{internal \\ edge \\density},0.04399792347483652
+367,farz_0.70,significance,2029.2675830779453
+368,farz_0.70,\shortstack[l]{avarage \\ internal \\degree},5.391100233780817
+369,farz_0.70,\shortstack[l]{modularity \\ density},-0.13546303004878762
+370,farz_0.75,$|V|$,200.0
+371,farz_0.75,$|E|$,910.0
+372,farz_0.75,$\hat{k}$,5.0
+373,farz_0.75,$\hat{o}$,34.0
+374,farz_0.75,$\hat{c}$,0.37398864747342125
+375,farz_0.75,\shortstack[l]{normalized \\ cut},0.519563572953061
+376,farz_0.75,\shortstack[l]{internal \\ edge \\density},0.032616825322095956
+377,farz_0.75,significance,2241.1857160325744
+378,farz_0.75,\shortstack[l]{avarage \\ internal \\degree},5.46383680246694
+379,farz_0.75,\shortstack[l]{modularity \\ density},0.047466374589808485
+380,farz_0.80,$|V|$,200.0
+381,farz_0.80,$|E|$,904.0
+382,farz_0.80,$\hat{k}$,5.0
+383,farz_0.80,$\hat{o}$,31.0
+384,farz_0.80,$\hat{c}$,0.3965509963090328
+385,farz_0.80,\shortstack[l]{normalized \\ cut},0.4810669000725946
+386,farz_0.80,\shortstack[l]{internal \\ edge \\density},0.04288022602076882
+387,farz_0.80,significance,2295.174924723265
+388,farz_0.80,\shortstack[l]{avarage \\ internal \\degree},5.9371771879483495
+389,farz_0.80,\shortstack[l]{modularity \\ density},0.07636296830377282
+390,farz_0.85,$|V|$,200.0
+391,farz_0.85,$|E|$,870.0
+392,farz_0.85,$\hat{k}$,5.0
+393,farz_0.85,$\hat{o}$,16.0
+394,farz_0.85,$\hat{c}$,0.4185254530436067
+395,farz_0.85,\shortstack[l]{normalized \\ cut},0.43450760352537704
+396,farz_0.85,\shortstack[l]{internal \\ edge \\density},0.06388717843106126
+397,farz_0.85,significance,2212.6494035239957
+398,farz_0.85,\shortstack[l]{avarage \\ internal \\degree},5.298730158730159
+399,farz_0.85,\shortstack[l]{modularity \\ density},-0.22480032753842272
+400,farz_0.90,$|V|$,200.0
+401,farz_0.90,$|E|$,890.0
+402,farz_0.90,$\hat{k}$,5.0
+403,farz_0.90,$\hat{o}$,20.0
+404,farz_0.90,$\hat{c}$,0.4710001355519321
+405,farz_0.90,\shortstack[l]{normalized \\ cut},0.32840527485497784
+406,farz_0.90,\shortstack[l]{internal \\ edge \\density},0.07407048927973543
+407,farz_0.90,significance,2725.444156329346
+408,farz_0.90,\shortstack[l]{avarage \\ internal \\degree},7.173703979636183
+409,farz_0.90,\shortstack[l]{modularity \\ density},0.29077351311818994
+410,farz_0.95,$|V|$,200.0
+411,farz_0.95,$|E|$,902.0
+412,farz_0.95,$\hat{k}$,5.0
+413,farz_0.95,$\hat{o}$,32.0
+414,farz_0.95,$\hat{c}$,0.4248466880996454
+415,farz_0.95,\shortstack[l]{normalized \\ cut},0.42798977718564224
+416,farz_0.95,\shortstack[l]{internal \\ edge \\density},0.031272785806208014
+417,farz_0.95,significance,
+418,farz_0.95,\shortstack[l]{avarage \\ internal \\degree},5.873686463349385
+419,farz_0.95,\shortstack[l]{modularity \\ density},-2.31295877523977
+420,PP_0.20_0.10,$|V|$,30.0
+421,PP_0.20_0.10,$|E|$,61.0
+422,PP_0.20_0.10,$\hat{k}$,6.0
+423,PP_0.20_0.10,$\hat{o}$,0.0
+424,PP_0.20_0.10,$\hat{c}$,0.17920634920634926
+425,PP_0.20_0.10,\shortstack[l]{normalized \\ cut},0.8433301573738206
+426,PP_0.20_0.10,\shortstack[l]{internal \\ edge \\density},0.06666666666666667
+427,PP_0.20_0.10,significance,23.98633546457233
+428,PP_0.20_0.10,\shortstack[l]{avarage \\ internal \\degree},1.0666666666666667
+429,PP_0.20_0.10,\shortstack[l]{modularity \\ density},-2.3200000000000003
+430,PP_0.40_0.10,$|V|$,30.0
+431,PP_0.40_0.10,$|E|$,73.0
+432,PP_0.40_0.10,$\hat{k}$,6.0
+433,PP_0.40_0.10,$\hat{o}$,0.0
+434,PP_0.40_0.10,$\hat{c}$,0.17484126984126988
+435,PP_0.40_0.10,\shortstack[l]{normalized \\ cut},0.7084948839032682
+436,PP_0.40_0.10,\shortstack[l]{internal \\ edge \\density},0.11666666666666665
+437,PP_0.40_0.10,significance,62.102245618237234
+438,PP_0.40_0.10,\shortstack[l]{avarage \\ internal \\degree},1.8666666666666665
+439,PP_0.40_0.10,\shortstack[l]{modularity \\ density},-1.36
+440,PP_0.60_0.10,$|V|$,30.0
+441,PP_0.60_0.10,$|E|$,89.0
+442,PP_0.60_0.10,$\hat{k}$,6.0
+443,PP_0.60_0.10,$\hat{o}$,0.0
+444,PP_0.60_0.10,$\hat{c}$,0.248032708032708
+445,PP_0.60_0.10,\shortstack[l]{normalized \\ cut},0.689874791502621
+446,PP_0.60_0.10,\shortstack[l]{internal \\ edge \\density},0.15
+447,PP_0.60_0.10,significance,98.54808618664221
+448,PP_0.60_0.10,\shortstack[l]{avarage \\ internal \\degree},2.4
+449,PP_0.60_0.10,\shortstack[l]{modularity \\ density},-1.36
+450,PP_0.80_0.10,$|V|$,30.0
+451,PP_0.80_0.10,$|E|$,101.0
+452,PP_0.80_0.10,$\hat{k}$,6.0
+453,PP_0.80_0.10,$\hat{o}$,0.0
+454,PP_0.80_0.10,$\hat{c}$,0.35946849446849455
+455,PP_0.80_0.10,\shortstack[l]{normalized \\ cut},0.6070982601033634
+456,PP_0.80_0.10,\shortstack[l]{internal \\ edge \\density},0.19999999999999998
+457,PP_0.80_0.10,significance,
+458,PP_0.80_0.10,\shortstack[l]{avarage \\ internal \\degree},3.1999999999999997
+459,PP_0.80_0.10,\shortstack[l]{modularity \\ density},-0.40000000000000013
+460,PP_1.00_0.10,$|V|$,30.0
+461,PP_1.00_0.10,$|E|$,118.0
+462,PP_1.00_0.10,$\hat{k}$,6.0
+463,PP_1.00_0.10,$\hat{o}$,0.0
+464,PP_1.00_0.10,$\hat{c}$,0.3773015873015872
+465,PP_1.00_0.10,\shortstack[l]{normalized \\ cut},0.5703791891021249
+466,PP_1.00_0.10,\shortstack[l]{internal \\ edge \\density},0.25
+467,PP_1.00_0.10,significance,
+468,PP_1.00_0.10,\shortstack[l]{avarage \\ internal \\degree},4.0
+469,PP_1.00_0.10,\shortstack[l]{modularity \\ density},0.1600000000000001
+470,PP_0.20_0.15,$|V|$,30.0
+471,PP_0.20_0.15,$|E|$,84.0
+472,PP_0.20_0.15,$\hat{k}$,6.0
+473,PP_0.20_0.15,$\hat{o}$,0.0
+474,PP_0.20_0.15,$\hat{c}$,0.18314814814814814
+475,PP_0.20_0.15,\shortstack[l]{normalized \\ cut},0.9645631896831195
+476,PP_0.20_0.15,\shortstack[l]{internal \\ edge \\density},0.05833333333333333
+477,PP_0.20_0.15,significance,
+478,PP_0.20_0.15,\shortstack[l]{avarage \\ internal \\degree},0.9333333333333332
+479,PP_0.20_0.15,\shortstack[l]{modularity \\ density},-4.4799999999999995
+480,PP_0.40_0.15,$|V|$,30.0
+481,PP_0.40_0.15,$|E|$,93.0
+482,PP_0.40_0.15,$\hat{k}$,6.0
+483,PP_0.40_0.15,$\hat{o}$,0.0
+484,PP_0.40_0.15,$\hat{c}$,0.22854497354497352
+485,PP_0.40_0.15,\shortstack[l]{normalized \\ cut},0.8691793540990016
+486,PP_0.40_0.15,\shortstack[l]{internal \\ edge \\density},0.09583333333333334
+487,PP_0.40_0.15,significance,53.293940747163475
+488,PP_0.40_0.15,\shortstack[l]{avarage \\ internal \\degree},1.5333333333333334
+489,PP_0.40_0.15,\shortstack[l]{modularity \\ density},-3.7600000000000002
+490,PP_0.60_0.15,$|V|$,30.0
+491,PP_0.60_0.15,$|E|$,104.0
+492,PP_0.60_0.15,$\hat{k}$,6.0
+493,PP_0.60_0.15,$\hat{o}$,0.0
+494,PP_0.60_0.15,$\hat{c}$,0.24923039923039927
+495,PP_0.60_0.15,\shortstack[l]{normalized \\ cut},0.7791944558499039
+496,PP_0.60_0.15,\shortstack[l]{internal \\ edge \\density},0.14166666666666666
+497,PP_0.60_0.15,significance,97.11194143010982
+498,PP_0.60_0.15,\shortstack[l]{avarage \\ internal \\degree},2.2666666666666666
+499,PP_0.60_0.15,\shortstack[l]{modularity \\ density},-2.880000000000001
+500,PP_0.80_0.15,$|V|$,30.0
+501,PP_0.80_0.15,$|E|$,112.0
+502,PP_0.80_0.15,$\hat{k}$,6.0
+503,PP_0.80_0.15,$\hat{o}$,0.0
+504,PP_0.80_0.15,$\hat{c}$,0.28162818662818656
+505,PP_0.80_0.15,\shortstack[l]{normalized \\ cut},0.7240365626286079
+506,PP_0.80_0.15,\shortstack[l]{internal \\ edge \\density},0.17500000000000002
+507,PP_0.80_0.15,significance,134.88164012901152
+508,PP_0.80_0.15,\shortstack[l]{avarage \\ internal \\degree},2.8000000000000003
+509,PP_0.80_0.15,\shortstack[l]{modularity \\ density},-2.24
+510,PP_1.00_0.15,$|V|$,30.0
+511,PP_1.00_0.15,$|E|$,134.0
+512,PP_1.00_0.15,$\hat{k}$,6.0
+513,PP_1.00_0.15,$\hat{o}$,0.0
+514,PP_1.00_0.15,$\hat{c}$,0.3896753246753248
+515,PP_1.00_0.15,\shortstack[l]{normalized \\ cut},0.6397959471458101
+516,PP_1.00_0.15,\shortstack[l]{internal \\ edge \\density},0.25
+517,PP_1.00_0.15,significance,
+518,PP_1.00_0.15,\shortstack[l]{avarage \\ internal \\degree},4.0
+519,PP_1.00_0.15,\shortstack[l]{modularity \\ density},-1.12
+520,PP_0.20_0.20,$|V|$,30.0
+521,PP_0.20_0.20,$|E|$,99.0
+522,PP_0.20_0.20,$\hat{k}$,6.0
+523,PP_0.20_0.20,$\hat{o}$,0.0
+524,PP_0.20_0.20,$\hat{c}$,0.2040838790838791
+525,PP_0.20_0.20,\shortstack[l]{normalized \\ cut},1.0110767065286348
+526,PP_0.20_0.20,\shortstack[l]{internal \\ edge \\density},0.05000000000000001
+527,PP_0.20_0.20,significance,
+528,PP_0.20_0.20,\shortstack[l]{avarage \\ internal \\degree},0.8000000000000002
+529,PP_0.20_0.20,\shortstack[l]{modularity \\ density},-6.0
+530,PP_0.40_0.20,$|V|$,30.0
+531,PP_0.40_0.20,$|E|$,109.0
+532,PP_0.40_0.20,$\hat{k}$,6.0
+533,PP_0.40_0.20,$\hat{o}$,0.0
+534,PP_0.40_0.20,$\hat{c}$,0.24664779664779665
+535,PP_0.40_0.20,\shortstack[l]{normalized \\ cut},0.9204454184937539
+536,PP_0.40_0.20,\shortstack[l]{internal \\ edge \\density},0.09166666666666666
+537,PP_0.40_0.20,significance,51.95955344177856
+538,PP_0.40_0.20,\shortstack[l]{avarage \\ internal \\degree},1.4666666666666666
+539,PP_0.40_0.20,\shortstack[l]{modularity \\ density},-5.2
+540,PP_0.60_0.20,$|V|$,30.0
+541,PP_0.60_0.20,$|E|$,126.0
+542,PP_0.60_0.20,$\hat{k}$,6.0
+543,PP_0.60_0.20,$\hat{o}$,0.0
+544,PP_0.60_0.20,$\hat{c}$,0.2923337773337773
+545,PP_0.60_0.20,\shortstack[l]{normalized \\ cut},0.801801743827555
+546,PP_0.60_0.20,\shortstack[l]{internal \\ edge \\density},0.1625
+547,PP_0.60_0.20,significance,127.19469424727664
+548,PP_0.60_0.20,\shortstack[l]{avarage \\ internal \\degree},2.6
+549,PP_0.60_0.20,\shortstack[l]{modularity \\ density},-3.8400000000000007
+550,PP_0.80_0.20,$|V|$,30.0
+551,PP_0.80_0.20,$|E|$,134.0
+552,PP_0.80_0.20,$\hat{k}$,6.0
+553,PP_0.80_0.20,$\hat{o}$,0.0
+554,PP_0.80_0.20,$\hat{c}$,0.31429884929884927
+555,PP_0.80_0.20,\shortstack[l]{normalized \\ cut},0.7492437410524704
+556,PP_0.80_0.20,\shortstack[l]{internal \\ edge \\density},0.19583333333333333
+557,PP_0.80_0.20,significance,167.6338522405152
+558,PP_0.80_0.20,\shortstack[l]{avarage \\ internal \\degree},3.1333333333333333
+559,PP_0.80_0.20,\shortstack[l]{modularity \\ density},-3.2
+560,PP_1.00_0.20,$|V|$,30.0
+561,PP_1.00_0.20,$|E|$,148.0
+562,PP_1.00_0.20,$\hat{k}$,6.0
+563,PP_1.00_0.20,$\hat{o}$,0.0
+564,PP_1.00_0.20,$\hat{c}$,0.4034189884189884
+565,PP_1.00_0.20,\shortstack[l]{normalized \\ cut},0.6861472204091977
+566,PP_1.00_0.20,\shortstack[l]{internal \\ edge \\density},0.25
+567,PP_1.00_0.20,significance,
+568,PP_1.00_0.20,\shortstack[l]{avarage \\ internal \\degree},4.0
+569,PP_1.00_0.20,\shortstack[l]{modularity \\ density},-2.2399999999999998
+570,PP_0.20_0.25,$|V|$,30.0
+571,PP_0.20_0.25,$|E|$,119.0
+572,PP_0.20_0.25,$\hat{k}$,6.0
+573,PP_0.20_0.25,$\hat{o}$,0.0
+574,PP_0.20_0.25,$\hat{c}$,0.31365430865430866
+575,PP_0.20_0.25,\shortstack[l]{normalized \\ cut},1.0373201970362462
+576,PP_0.20_0.25,\shortstack[l]{internal \\ edge \\density},0.05000000000000001
+577,PP_0.20_0.25,significance,
+578,PP_0.20_0.25,\shortstack[l]{avarage \\ internal \\degree},0.8000000000000002
+579,PP_0.20_0.25,\shortstack[l]{modularity \\ density},-7.6000000000000005
+580,PP_0.40_0.25,$|V|$,30.0
+581,PP_0.40_0.25,$|E|$,133.0
+582,PP_0.40_0.25,$\hat{k}$,6.0
+583,PP_0.40_0.25,$\hat{o}$,0.0
+584,PP_0.40_0.25,$\hat{c}$,0.34101583601583607
+585,PP_0.40_0.25,\shortstack[l]{normalized \\ cut},0.9262627154181676
+586,PP_0.40_0.25,\shortstack[l]{internal \\ edge \\density},0.10833333333333334
+587,PP_0.40_0.25,significance,72.03845705837644
+588,PP_0.40_0.25,\shortstack[l]{avarage \\ internal \\degree},1.7333333333333334
+589,PP_0.40_0.25,\shortstack[l]{modularity \\ density},-6.48
+590,PP_0.60_0.25,$|V|$,30.0
+591,PP_0.60_0.25,$|E|$,148.0
+592,PP_0.60_0.25,$\hat{k}$,6.0
+593,PP_0.60_0.25,$\hat{o}$,0.0
+594,PP_0.60_0.25,$\hat{c}$,0.3773350723350724
+595,PP_0.60_0.25,\shortstack[l]{normalized \\ cut},0.8316961180600949
+596,PP_0.60_0.25,\shortstack[l]{internal \\ edge \\density},0.1708333333333333
+597,PP_0.60_0.25,significance,141.69377756214564
+598,PP_0.60_0.25,\shortstack[l]{avarage \\ internal \\degree},2.733333333333333
+599,PP_0.60_0.25,\shortstack[l]{modularity \\ density},-5.28
+600,PP_0.80_0.25,$|V|$,30.0
+601,PP_0.80_0.25,$|E|$,160.0
+602,PP_0.80_0.25,$\hat{k}$,6.0
+603,PP_0.80_0.25,$\hat{o}$,0.0
+604,PP_0.80_0.25,$\hat{c}$,0.42237595737595746
+605,PP_0.80_0.25,\shortstack[l]{normalized \\ cut},0.7690832411594107
+606,PP_0.80_0.25,\shortstack[l]{internal \\ edge \\density},0.22083333333333335
+607,PP_0.80_0.25,significance,
+608,PP_0.80_0.25,\shortstack[l]{avarage \\ internal \\degree},3.5333333333333337
+609,PP_0.80_0.25,\shortstack[l]{modularity \\ density},-4.32
+610,PP_1.00_0.25,$|V|$,30.0
+611,PP_1.00_0.25,$|E|$,165.0
+612,PP_1.00_0.25,$\hat{k}$,6.0
+613,PP_1.00_0.25,$\hat{o}$,0.0
+614,PP_1.00_0.25,$\hat{c}$,0.43335303585303586
+615,PP_1.00_0.25,\shortstack[l]{normalized \\ cut},0.7334144198156455
+616,PP_1.00_0.25,\shortstack[l]{internal \\ edge \\density},0.25
+617,PP_1.00_0.25,significance,
+618,PP_1.00_0.25,\shortstack[l]{avarage \\ internal \\degree},4.0
+619,PP_1.00_0.25,\shortstack[l]{modularity \\ density},-3.5999999999999996
+620,SBM_0.2_0.1,$|V|$,68.0
+621,SBM_0.2_0.1,$|E|$,276.0
+622,SBM_0.2_0.1,$\hat{k}$,7.0
+623,SBM_0.2_0.1,$\hat{o}$,0.0
+624,SBM_0.2_0.1,$\hat{c}$,0.14944165311812363
+625,SBM_0.2_0.1,\shortstack[l]{normalized \\ cut},0.8622868376133306
+626,SBM_0.2_0.1,\shortstack[l]{internal \\ edge \\density},0.05535714285714286
+627,SBM_0.2_0.1,significance,184.93640295574667
+628,SBM_0.2_0.1,\shortstack[l]{avarage \\ internal \\degree},1.965079365079365
+629,SBM_0.2_0.1,\shortstack[l]{modularity \\ density},-3.0462962962962967
+630,SBM_0.2_0.15,$|V|$,68.0
+631,SBM_0.2_0.15,$|E|$,354.0
+632,SBM_0.2_0.15,$\hat{k}$,7.0
+633,SBM_0.2_0.15,$\hat{o}$,0.0
+634,SBM_0.2_0.15,$\hat{c}$,0.1393576723161498
+635,SBM_0.2_0.15,\shortstack[l]{normalized \\ cut},0.9396091232478331
+636,SBM_0.2_0.15,\shortstack[l]{internal \\ edge \\density},0.05
+637,SBM_0.2_0.15,significance,172.6982206010244
+638,SBM_0.2_0.15,\shortstack[l]{avarage \\ internal \\degree},1.7682539682539684
+639,SBM_0.2_0.15,\shortstack[l]{modularity \\ density},-5.0012345679012356
+640,SBM_0.2_0.2,$|V|$,68.0
+641,SBM_0.2_0.2,$|E|$,427.0
+642,SBM_0.2_0.2,$\hat{k}$,7.0
+643,SBM_0.2_0.2,$\hat{o}$,0.0
+644,SBM_0.2_0.2,$\hat{c}$,0.19338075052994913
+645,SBM_0.2_0.2,\shortstack[l]{normalized \\ cut},0.9894695818715074
+646,SBM_0.2_0.2,\shortstack[l]{internal \\ edge \\density},0.04484126984126984
+647,SBM_0.2_0.2,significance,152.6851550130474
+648,SBM_0.2_0.2,\shortstack[l]{avarage \\ internal \\degree},1.5587301587301587
+649,SBM_0.2_0.2,\shortstack[l]{modularity \\ density},-6.8375308641975305
+650,SBM_0.2_0.25,$|V|$,68.0
+651,SBM_0.2_0.25,$|E|$,532.0
+652,SBM_0.2_0.25,$\hat{k}$,7.0
+653,SBM_0.2_0.25,$\hat{o}$,0.0
+654,SBM_0.2_0.25,$\hat{c}$,0.24334675544407075
+655,SBM_0.2_0.25,\shortstack[l]{normalized \\ cut},1.0077705554541414
+656,SBM_0.2_0.25,\shortstack[l]{internal \\ edge \\density},0.04801587301587302
+657,SBM_0.2_0.25,significance,189.4018798522512
+658,SBM_0.2_0.25,\shortstack[l]{avarage \\ internal \\degree},1.7047619047619047
+659,SBM_0.2_0.25,\shortstack[l]{modularity \\ density},-8.800740740740741
+660,SBM_0.4_0.1,$|V|$,68.0
+661,SBM_0.4_0.1,$|E|$,295.0
+662,SBM_0.4_0.1,$\hat{k}$,7.0
+663,SBM_0.4_0.1,$\hat{o}$,0.0
+664,SBM_0.4_0.1,$\hat{c}$,0.1539674377909671
+665,SBM_0.4_0.1,\shortstack[l]{normalized \\ cut},0.7282505327873617
+666,SBM_0.4_0.1,\shortstack[l]{internal \\ edge \\density},0.08888888888888889
+667,SBM_0.4_0.1,significance,345.058552517091
+668,SBM_0.4_0.1,\shortstack[l]{avarage \\ internal \\degree},3.1206349206349207
+669,SBM_0.4_0.1,\shortstack[l]{modularity \\ density},-1.781851851851852
+670,SBM_0.4_0.15,$|V|$,68.0
+671,SBM_0.4_0.15,$|E|$,404.0
+672,SBM_0.4_0.15,$\hat{k}$,7.0
+673,SBM_0.4_0.15,$\hat{o}$,0.0
+674,SBM_0.4_0.15,$\hat{c}$,0.17984539489729795
+675,SBM_0.4_0.15,\shortstack[l]{normalized \\ cut},0.8178818727437825
+676,SBM_0.4_0.15,\shortstack[l]{internal \\ edge \\density},0.09444444444444446
+677,SBM_0.4_0.15,significance,420.89511324632497
+678,SBM_0.4_0.15,\shortstack[l]{avarage \\ internal \\degree},3.336507936507936
+679,SBM_0.4_0.15,\shortstack[l]{modularity \\ density},-3.8060493827160498
+680,SBM_0.4_0.2,$|V|$,68.0
+681,SBM_0.4_0.2,$|E|$,488.0
+682,SBM_0.4_0.2,$\hat{k}$,7.0
+683,SBM_0.4_0.2,$\hat{o}$,0.0
+684,SBM_0.4_0.2,$\hat{c}$,0.21470986026963979
+685,SBM_0.4_0.2,\shortstack[l]{normalized \\ cut},0.8696701330464938
+686,SBM_0.4_0.2,\shortstack[l]{internal \\ edge \\density},0.09563492063492063
+687,SBM_0.4_0.2,significance,434.77255230358224
+688,SBM_0.4_0.2,\shortstack[l]{avarage \\ internal \\degree},3.33968253968254
+689,SBM_0.4_0.2,\shortstack[l]{modularity \\ density},-5.558888888888889
+690,SBM_0.4_0.25,$|V|$,68.0
+691,SBM_0.4_0.25,$|E|$,582.0
+692,SBM_0.4_0.25,$\hat{k}$,7.0
+693,SBM_0.4_0.25,$\hat{o}$,0.0
+694,SBM_0.4_0.25,$\hat{c}$,0.25995101801497444
+695,SBM_0.4_0.25,\shortstack[l]{normalized \\ cut},0.9033600911776808
+696,SBM_0.4_0.25,\shortstack[l]{internal \\ edge \\density},0.09821428571428571
+697,SBM_0.4_0.25,significance,474.2087314467035
+698,SBM_0.4_0.25,\shortstack[l]{avarage \\ internal \\degree},3.444444444444444
+699,SBM_0.4_0.25,\shortstack[l]{modularity \\ density},-7.356296296296296
+700,SBM_0.6_0.1,$|V|$,68.0
+701,SBM_0.6_0.1,$|E|$,352.0
+702,SBM_0.6_0.1,$\hat{k}$,7.0
+703,SBM_0.6_0.1,$\hat{o}$,0.0
+704,SBM_0.6_0.1,$\hat{c}$,0.2099745434304257
+705,SBM_0.6_0.1,\shortstack[l]{normalized \\ cut},0.6101617183379576
+706,SBM_0.6_0.1,\shortstack[l]{internal \\ edge \\density},0.13749999999999998
+707,SBM_0.6_0.1,significance,645.0974773865165
+708,SBM_0.6_0.1,\shortstack[l]{avarage \\ internal \\degree},4.803174603174604
+709,SBM_0.6_0.1,\shortstack[l]{modularity \\ density},-0.5597530864197532
+710,SBM_0.6_0.15,$|V|$,68.0
+711,SBM_0.6_0.15,$|E|$,471.0
+712,SBM_0.6_0.15,$\hat{k}$,7.0
+713,SBM_0.6_0.15,$\hat{o}$,0.0
+714,SBM_0.6_0.15,$\hat{c}$,0.2433794291060727
+715,SBM_0.6_0.15,\shortstack[l]{normalized \\ cut},0.71389413226173
+716,SBM_0.6_0.15,\shortstack[l]{internal \\ edge \\density},0.14722222222222223
+717,SBM_0.6_0.15,significance,770.8021704160334
+718,SBM_0.6_0.15,\shortstack[l]{avarage \\ internal \\degree},5.165079365079365
+719,SBM_0.6_0.15,\shortstack[l]{modularity \\ density},-2.5792592592592594
+720,SBM_0.6_0.2,$|V|$,68.0
+721,SBM_0.6_0.2,$|E|$,553.0
+722,SBM_0.6_0.2,$\hat{k}$,7.0
+723,SBM_0.6_0.2,$\hat{o}$,0.0
+724,SBM_0.6_0.2,$\hat{c}$,0.2648215593553518
+725,SBM_0.6_0.2,\shortstack[l]{normalized \\ cut},0.7671657943578404
+726,SBM_0.6_0.2,\shortstack[l]{internal \\ edge \\density},0.15099206349206348
+727,SBM_0.6_0.2,significance,816.5059825734562
+728,SBM_0.6_0.2,\shortstack[l]{avarage \\ internal \\degree},5.273015873015873
+729,SBM_0.6_0.2,\shortstack[l]{modularity \\ density},-4.146172839506173
+730,SBM_0.6_0.25,$|V|$,68.0
+731,SBM_0.6_0.25,$|E|$,654.0
+732,SBM_0.6_0.25,$\hat{k}$,7.0
+733,SBM_0.6_0.25,$\hat{o}$,0.0
+734,SBM_0.6_0.25,$\hat{c}$,0.2924253227735112
+735,SBM_0.6_0.25,\shortstack[l]{normalized \\ cut},0.8195166483254422
+736,SBM_0.6_0.25,\shortstack[l]{internal \\ edge \\density},0.15238095238095237
+737,SBM_0.6_0.25,significance,852.1702805188321
+738,SBM_0.6_0.25,\shortstack[l]{avarage \\ internal \\degree},5.311111111111111
+739,SBM_0.6_0.25,\shortstack[l]{modularity \\ density},-6.194197530864198
+740,SBM_0.8_0.1,$|V|$,68.0
+741,SBM_0.8_0.1,$|E|$,417.0
+742,SBM_0.8_0.1,$\hat{k}$,7.0
+743,SBM_0.8_0.1,$\hat{o}$,0.0
+744,SBM_0.8_0.1,$\hat{c}$,0.3162380040384958
+745,SBM_0.8_0.1,\shortstack[l]{normalized \\ cut},0.5222680042368247
+746,SBM_0.8_0.1,\shortstack[l]{internal \\ edge \\density},0.1902777777777778
+747,SBM_0.8_0.1,significance,1051.310811142288
+748,SBM_0.8_0.1,\shortstack[l]{avarage \\ internal \\degree},6.647619047619048
+749,SBM_0.8_0.1,\shortstack[l]{modularity \\ density},0.7329629629629629
+750,SBM_0.8_0.15,$|V|$,68.0
+751,SBM_0.8_0.15,$|E|$,535.0
+752,SBM_0.8_0.15,$\hat{k}$,7.0
+753,SBM_0.8_0.15,$\hat{o}$,0.0
+754,SBM_0.8_0.15,$\hat{c}$,0.30654463962149253
+755,SBM_0.8_0.15,\shortstack[l]{normalized \\ cut},0.639235609084234
+756,SBM_0.8_0.15,\shortstack[l]{internal \\ edge \\density},0.1976190476190476
+757,SBM_0.8_0.15,significance,1171.9352744443663
+758,SBM_0.8_0.15,\shortstack[l]{avarage \\ internal \\degree},6.907936507936507
+759,SBM_0.8_0.15,\shortstack[l]{modularity \\ density},-1.4171604938271605
+760,SBM_0.8_0.2,$|V|$,68.0
+761,SBM_0.8_0.2,$|E|$,617.0
+762,SBM_0.8_0.2,$\hat{k}$,7.0
+763,SBM_0.8_0.2,$\hat{o}$,0.0
+764,SBM_0.8_0.2,$\hat{c}$,0.32113338126918645
+765,SBM_0.8_0.2,\shortstack[l]{normalized \\ cut},0.6918869195650892
+766,SBM_0.8_0.2,\shortstack[l]{internal \\ edge \\density},0.20317460317460317
+767,SBM_0.8_0.2,significance,1255.9907299954025
+768,SBM_0.8_0.2,\shortstack[l]{avarage \\ internal \\degree},7.107936507936508
+769,SBM_0.8_0.2,\shortstack[l]{modularity \\ density},-2.859259259259259
+770,SBM_0.8_0.25,$|V|$,68.0
+771,SBM_0.8_0.25,$|E|$,697.0
+772,SBM_0.8_0.25,$\hat{k}$,7.0
+773,SBM_0.8_0.25,$\hat{o}$,0.0
+774,SBM_0.8_0.25,$\hat{c}$,0.3335125271118259
+775,SBM_0.8_0.25,\shortstack[l]{normalized \\ cut},0.7556687705935514
+776,SBM_0.8_0.25,\shortstack[l]{internal \\ edge \\density},0.19642857142857142
+777,SBM_0.8_0.25,significance,1212.97441654001
+778,SBM_0.8_0.25,\shortstack[l]{avarage \\ internal \\degree},6.841269841269842
+779,SBM_0.8_0.25,\shortstack[l]{modularity \\ density},-4.901481481481482
+780,SBM_1.0_0.1,$|V|$,68.0
+781,SBM_1.0_0.1,$|E|$,493.0
+782,SBM_1.0_0.1,$\hat{k}$,7.0
+783,SBM_1.0_0.1,$\hat{o}$,0.0
+784,SBM_1.0_0.1,$\hat{c}$,0.45573035748322555
+785,SBM_1.0_0.1,\shortstack[l]{normalized \\ cut},0.4560300227455035
+786,SBM_1.0_0.1,\shortstack[l]{internal \\ edge \\density},0.25
+787,SBM_1.0_0.1,significance,
+788,SBM_1.0_0.1,\shortstack[l]{avarage \\ internal \\degree},8.714285714285714
+789,SBM_1.0_0.1,\shortstack[l]{modularity \\ density},2.0856790123456794
+790,SBM_1.0_0.15,$|V|$,68.0
+791,SBM_1.0_0.15,$|E|$,589.0
+792,SBM_1.0_0.15,$\hat{k}$,7.0
+793,SBM_1.0_0.15,$\hat{o}$,0.0
+794,SBM_1.0_0.15,$\hat{c}$,0.3984501301509764
+795,SBM_1.0_0.15,\shortstack[l]{normalized \\ cut},0.566924757199855
+796,SBM_1.0_0.15,\shortstack[l]{internal \\ edge \\density},0.25
+797,SBM_1.0_0.15,significance,
+798,SBM_1.0_0.15,\shortstack[l]{avarage \\ internal \\degree},8.714285714285714
+799,SBM_1.0_0.15,\shortstack[l]{modularity \\ density},0.03197530864197548
+800,SBM_1.0_0.2,$|V|$,68.0
+801,SBM_1.0_0.2,$|E|$,676.0
+802,SBM_1.0_0.2,$\hat{k}$,7.0
+803,SBM_1.0_0.2,$\hat{o}$,0.0
+804,SBM_1.0_0.2,$\hat{c}$,0.38468512042984687
+805,SBM_1.0_0.2,\shortstack[l]{normalized \\ cut},0.6393442466511213
+806,SBM_1.0_0.2,\shortstack[l]{internal \\ edge \\density},0.25
+807,SBM_1.0_0.2,significance,
+808,SBM_1.0_0.2,\shortstack[l]{avarage \\ internal \\degree},8.714285714285714
+809,SBM_1.0_0.2,\shortstack[l]{modularity \\ density},-1.7760493827160493
+810,SBM_1.0_0.25,$|V|$,68.0
+811,SBM_1.0_0.25,$|E|$,767.0
+812,SBM_1.0_0.25,$\hat{k}$,7.0
+813,SBM_1.0_0.25,$\hat{o}$,0.0
+814,SBM_1.0_0.25,$\hat{c}$,0.3983642790913112
+815,SBM_1.0_0.25,\shortstack[l]{normalized \\ cut},0.6969856845981829
+816,SBM_1.0_0.25,\shortstack[l]{internal \\ edge \\density},0.25
+817,SBM_1.0_0.25,significance,
+818,SBM_1.0_0.25,\shortstack[l]{avarage \\ internal \\degree},8.714285714285714
+819,SBM_1.0_0.25,\shortstack[l]{modularity \\ density},-3.68283950617284
