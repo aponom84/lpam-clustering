@@ -174,13 +174,13 @@ def lpam_python_wrong_amp(graph, k=7, threshold=0.5, seed=0):
             if l[i] >= threshold:
                 _res_clusters[i].append(v)
 
-    return NodeClustering(communities=_res_clusters, graph=graph, method_name='lpam_amp', overlap = True)
+    return NodeClustering(communities=_res_clusters, graph=graph, method_name='lpam_amp_wrong', overlap = True)
 
 
-disntaces_cache_amp_peter = {}
-res_clusters_cache_amp_peter = {}
+disntaces_cache_amp = {}
+res_clusters_cache_amp = {}
 def lpam_python_amp(graph, k=7, threshold=0.5, seed=0):
-    def getAmp_peter(G):
+    def getAmp(G):
         """
         Returns the matrix of amplified commute distance
         """
@@ -226,13 +226,13 @@ def lpam_python_amp(graph, k=7, threshold=0.5, seed=0):
     line_graph = nx.line_graph(graph)
 
 
-    global disntaces_cache_amp_peter
-    global res_clusters_cache_amp_peter
-    if (graph,k) in res_clusters_cache_amp_peter:
-        res_clusters = res_clusters_cache_amp_peter[(graph,k)]
+    global disntaces_cache_amp
+    global res_clusters_cache_amp
+    if (graph,k) in res_clusters_cache_amp:
+        res_clusters = res_clusters_cache_amp[(graph,k)]
     else:
-        D = disntaces_cache_amp_peter[graph] if graph in disntaces_cache_amp_peter else getAmp_peter(line_graph)
-        disntaces_cache_amp_peter[graph] = D
+        D = disntaces_cache_amp[graph] if graph in disntaces_cache_amp else getAmp(line_graph)
+        disntaces_cache_amp[graph] = D
 
         _n = len(line_graph.nodes())
         np.random.seed(0)
@@ -266,7 +266,7 @@ def lpam_python_amp(graph, k=7, threshold=0.5, seed=0):
                 covering[c_i] = len(l)/degree
 
             res_clusters[v] = covering
-        res_clusters_cache_amp_peter[(graph,k)] = res_clusters
+        res_clusters_cache_amp[(graph,k)] = res_clusters
 
     _res_clusters = [ [] for i in range(k) ]
 
@@ -275,12 +275,12 @@ def lpam_python_amp(graph, k=7, threshold=0.5, seed=0):
             if l[i] >= threshold:
                 _res_clusters[i].append(v)
 
-    return NodeClustering(communities=[c for c in _res_clusters if len(c)>0], graph=graph, method_name='lpam_amp_peter', overlap = True)
+    return NodeClustering(communities=[c for c in _res_clusters if len(c)>0], graph=graph, method_name='lpam_amp', overlap = True)
 
-disntaces_cache_cm_peter = {}
-res_clusters_cache_cm_peter = {}
+disntaces_cache_cm = {}
+res_clusters_cache_cm = {}
 def lpam_python_cm(graph, k=7, threshold=0.5, seed=0):
-    def getCommuteDistace_peter(G):
+    def getCommuteDistace(G):
         """
         Returns the matrix of commute distance
         """
@@ -310,15 +310,15 @@ def lpam_python_cm(graph, k=7, threshold=0.5, seed=0):
 
     line_graph = nx.line_graph(graph)
 
-    global disntaces_cache_cm_peter
-    global res_clusters_cache_cm_peter
+    global disntaces_cache_cm
+    global res_clusters_cache_cm
     res_clusters = {}
-    if (graph,k) in res_clusters_cache_cm_peter:
-        res_clusters = res_clusters_cache_cm_peter[(graph,k)]
+    if (graph,k) in res_clusters_cache_cm:
+        res_clusters = res_clusters_cache_cm[(graph,k)]
     else:
         # print('calculating distance')
-        D = disntaces_cache_cm_peter[graph] if graph in disntaces_cache_cm_peter else getCommuteDistace_peter(line_graph)
-        disntaces_cache_cm_peter[graph] = D
+        D = disntaces_cache_cm[graph] if graph in disntaces_cache_cm else getCommuteDistace(line_graph)
+        disntaces_cache_cm[graph] = D
         # print('solve p-median problems')
 
         _n = len(line_graph.nodes())
@@ -353,7 +353,7 @@ def lpam_python_cm(graph, k=7, threshold=0.5, seed=0):
                 covering[c_i] = len(l)/degree
 
             res_clusters[v] = covering
-        res_clusters_cache_cm_peter[(graph,k)] = res_clusters
+        res_clusters_cache_cm[(graph,k)] = res_clusters
 
     _res_clusters = [ [] for i in range(k) ]
     for v, l in res_clusters.items():
@@ -366,7 +366,7 @@ def lpam_python_cm(graph, k=7, threshold=0.5, seed=0):
     # print(_res_clusters)
     # print('---------------------------------------------------------------------------------------')
 
-    return NodeClustering(communities=[c for c in _res_clusters if len(c)>0], graph=graph, method_name='lpam_cm_peter', overlap = True)
+    return NodeClustering(communities=[c for c in _res_clusters if len(c)>0], graph=graph, method_name='lpam_cm', overlap = True)
 
 def complete_partition(partition, g, mode='new_cluster'):
     pc = partition
