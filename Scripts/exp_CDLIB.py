@@ -44,8 +44,7 @@ def getOverlappingNumber(community)->int:
     return len(overpaping)
 
 
-# def copra(graph, param)->List[List[int]]:
-def copra(graph, param):
+def copra(graph, param)->List[List[int]]:
     inputFile = 'copra_input.txt'
     z = get_ipython().getoutput(f'rm -f {inputFile} || true')
     nx.write_edgelist(graph, inputFile,  data=False)
@@ -64,8 +63,7 @@ def copra(graph, param):
     return NodeClustering(communities=com, graph=graph, method_name='copra', method_parameters=param, overlap=isOverlap(com))
 
 
-# def oslom(graph, t=0.5, cp=0.5, seed=13)->List[List[int]]:
-def oslom(graph, t=0.5, cp=0.5, seed=13):
+def oslom(graph, t=0.5, cp=0.5, seed=13)->List[List[int]]:
     '''
     graph - NetworkX
     t - threashould ?
@@ -79,7 +77,6 @@ def oslom(graph, t=0.5, cp=0.5, seed=13):
     nx.write_edgelist(graph, inputFile, data=False)
     param = f'-t {t} -cp {cp} -seed {seed}'
     cmd = f'../related_methods/OSLOM2/oslom_undir -f {inputFile} -uw {param}'
-    # print(f'running: [{cmd}]')
     tmp = get_ipython().getoutput(cmd)
     lines = get_ipython().getoutput('cat oslom_tmp_input.txt_oslo_files/partitions_level_0')
     com = [ [int(v) for v in line.split()] for line in lines if not line.startswith('#')]
@@ -361,11 +358,6 @@ def lpam_python_cm(graph, k=7, threshold=0.5, seed=0):
             if l[i] >= threshold:
                 _res_clusters[i].append(v)
 
-
-    # print('---------------------------------------------------------------------------------------')
-    # print(_res_clusters)
-    # print('---------------------------------------------------------------------------------------')
-
     return NodeClustering(communities=[c for c in _res_clusters if len(c)>0], graph=graph, method_name='lpam_cm', overlap = True)
 
 def complete_partition(partition, g, mode='new_cluster'):
@@ -389,18 +381,8 @@ def complete_partition(partition, g, mode='new_cluster'):
     return [c for c in clusters if c]
 
 def save_community(reference, path):
-    # print('--------------------------------------------------------')
-    # print(reference)
     with open(path, 'w') as f:
         f.write('\n'.join([' '.join( [str(i) for i in c]) for c in reference]))
-
-# def fix_scoring(g, scoring_method, mode='new_cluster'):
-#     def method(first_partition, second_partition):
-#         p1 = complete_partition(partition = first_partition, g = g , mode = mode)
-#         p2 = complete_partition(partition = second_partition, g = g , mode = mode)
-#     return scoring_method(p1, p2)
-
-#     return method
 
 
 def read_com(groundTruth):
@@ -427,13 +409,8 @@ def generateFARZ(n=200, m=5, k=5, beta = 0.9, alpha=0.2, gamma=0.5):
         com = read_com('network.lgt')
         get_ipython().system(f'cp network.gml ../datasets/FARZ/farz_{beta:.2f}.gml')
         get_ipython().system(f'cp network.lgt ../datasets/FARZ/farz_{beta:.2f}.lgt')
-        # print('----------------------------------------------------------')
-        # print(com)
-        # com = defaultdict(list)
-        # for node in g.nodes(data=True):
-        #     com[ node[1]['c'] ].append(node[0])
+
         if nx.is_connected(g):
-            # return g, list(com.values())
             return g, com
 
 
